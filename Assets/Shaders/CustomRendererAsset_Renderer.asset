@@ -1,0 +1,179 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-7634101303498891829
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 959e894e3016f664285f3983022d2e01, type: 3}
+  m_Name: RadialBlurFeature
+  m_EditorClassIdentifier: Assembly-CSharp::RadialBlurFeature
+  m_Active: 1
+  settings:
+    renderPassEvent: 600
+    blurMaterial: {fileID: 2100000, guid: 478c939ee3a07a74f88edaa22e943a79, type: 2}
+    maxBlurStrength: 0.167
+    samples: 9
+    centerX: 0.5
+    centerY: 0.421
+    deadzoneRadius: 0.238
+    deadzoneFeather: 0.31
+    driveBySpeed: 1
+    minSpeedForBlur: 11.29
+    speedForMaxBlur: 107.1
+    intensitySmoothTime: 3.88
+--- !u!114 &-2508270596702115699
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f62c9c65cf3354c93be831c8bc075510, type: 3}
+  m_Name: ScreenSpaceAmbientOcclusion
+  m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Runtime::UnityEngine.Rendering.Universal.ScreenSpaceAmbientOcclusion
+  m_Active: 1
+  m_Settings:
+    AOMethod: 1
+    Downsample: 0
+    AfterOpaque: 1
+    Source: 1
+    NormalSamples: 1
+    Intensity: 1
+    DirectLightingStrength: 0.637
+    Radius: 0.24
+    Samples: 1
+    BlurQuality: 0
+    Falloff: 133.8
+    SampleCount: -1
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de640fe3d0db1804a85f9fc8f5cadab6, type: 3}
+  m_Name: CustomRendererAsset_Renderer
+  m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Runtime::UnityEngine.Rendering.Universal.UniversalRendererData
+  debugShaders:
+    debugReplacementPS: {fileID: 4800000, guid: cf852408f2e174538bcd9b7fda1c5ae7, type: 3}
+    hdrDebugViewPS: {fileID: 4800000, guid: 573620ae32aec764abd4d728906d2587, type: 3}
+    probeVolumeSamplingDebugComputeShader: {fileID: 7200000, guid: 53626a513ea68ce47b59dc1299fe3959, type: 3}
+  probeVolumeResources:
+    probeVolumeDebugShader: {fileID: 0}
+    probeVolumeFragmentationDebugShader: {fileID: 0}
+    probeVolumeOffsetDebugShader: {fileID: 0}
+    probeVolumeSamplingDebugShader: {fileID: 0}
+    probeSamplingDebugMesh: {fileID: 0}
+    probeSamplingDebugTexture: {fileID: 0}
+    probeVolumeBlendStatesCS: {fileID: 0}
+  m_RendererFeatures:
+  - {fileID: 603171512287661427}
+  - {fileID: 2940362364776121665}
+  - {fileID: 1384870042586708688}
+  - {fileID: 1239630464113763046}
+  - {fileID: -2508270596702115699}
+  - {fileID: -7634101303498891829}
+  m_RendererFeatureMap: 738d8a704be55e08418568f7fd43ce28d0fa7564f70b3813e6e240da560d34118d6803832ed530ddcb1d9ac94f390e96
+  xrSystemData: {fileID: 0}
+  postProcessData: {fileID: 11400000, guid: 41439944d30ece34e96484bdb6645b55, type: 2}
+  m_AssetVersion: 3
+  m_PrepassLayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_OpaqueLayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_TransparentLayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_DefaultStencilState:
+    overrideStencilState: 0
+    stencilReference: 0
+    stencilCompareFunction: 8
+    passOperation: 2
+    failOperation: 0
+    zFailOperation: 0
+  m_ShadowTransparentReceive: 1
+  m_RenderingMode: 0
+  m_DepthPrimingMode: 0
+  m_CopyDepthMode: 1
+  m_DepthAttachmentFormat: 0
+  m_DepthTextureFormat: 0
+  m_AccurateGbufferNormals: 0
+  m_IntermediateTextureMode: 1
+  m_TileOnlyMode: 0
+--- !u!114 &603171512287661427
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 152436be0b32ce344a70560b13d479e3, type: 3}
+  m_Name: PhosphorTrailRendererFeature
+  m_EditorClassIdentifier: Assembly-CSharp::RetroFX.PhosphorTrailRendererFeature
+  m_Active: 1
+  shader: {fileID: 4800000, guid: e0e90bec78550b34983222845d0acb12, type: 3}
+  renderPassEvent: 550
+  emissiveLayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+--- !u!114 &1239630464113763046
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f5d7e2161121d347afbf10dfd4ada43, type: 3}
+  m_Name: AnimeBloomRendererFeature
+  m_EditorClassIdentifier: Assembly-CSharp::RetroFX.AnimeBloomRendererFeature
+  m_Active: 0
+  shader: {fileID: 4800000, guid: 38647198fa1654b4096c65fecd414636, type: 3}
+  renderPassEvent: 550
+--- !u!114 &1384870042586708688
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bcdb8ff8de12f34ca8ff4d3c564d58b, type: 3}
+  m_Name: SoftBloomRendererFeature
+  m_EditorClassIdentifier: Assembly-CSharp::RetroFX.SoftBloomRendererFeature
+  m_Active: 1
+  shader: {fileID: 4800000, guid: a6880cd2dad7af9498d349f4e8471b1a, type: 3}
+  renderPassEvent: 550
+--- !u!114 &2940362364776121665
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44bc92b3a8b0ad142a899219028774c4, type: 3}
+  m_Name: TestTintRendererFeature
+  m_EditorClassIdentifier: Assembly-CSharp::RetroFX.TestTintRendererFeature
+  m_Active: 0
+  shader: {fileID: 4800000, guid: ce3fef07cebf789469652035f3642349, type: 3}
+  renderPassEvent: 550
+  tintColor: {r: 1, g: 0, b: 1, a: 1}
+  tintAmount: 0.5

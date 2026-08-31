@@ -1,0 +1,351 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbc1601453b18c040a06762808cc5140, type: 3}
+  m_Name: Fireblade1
+  m_EditorClassIdentifier: 
+  data:
+    carName: Fireblade
+    carClass: 2
+    engineDisplay: 2.3L Flatplane V4
+    description: Hello yes this is a test description
+  sounds:
+    engineSpoolUp: {fileID: 0}
+    engineSpoolDown: {fileID: 0}
+    engineBurble: {fileID: 0}
+    transmissionNoiseLevel: 0.2
+  car:
+    carMesh: {fileID: 0}
+    carMaterials: []
+    carCollider: {fileID: 0}
+    carColor1: {r: 1, g: 1, b: 1, a: 1}
+    carColor2: {r: 1, g: 1, b: 1, a: 1}
+    carColor3: {r: 1, g: 1, b: 1, a: 1}
+    frontWheelMesh: {fileID: 0}
+    frontWheelMaterial: {fileID: 0}
+    rearWheelMesh: {fileID: 0}
+    rearWheelMaterial: {fileID: 0}
+    popupHeadlights: []
+    popupMovement: []
+    popupMovementCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 1
+        outSlope: 1
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 1
+        outSlope: 1
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    popupRotation: []
+    popupRotationCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 1
+        outSlope: 1
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 1
+        outSlope: 1
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    activeAeroWing: {fileID: 0}
+    wingMovement: []
+    wingMovementCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 1
+        outSlope: 1
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 1
+        outSlope: 1
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    wingRotation: []
+    wingRotationCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 1
+        outSlope: 1
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 1
+        outSlope: 1
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    dragCoefficient: 0.31
+    weightDistribution: 0.5
+  chassis:
+    transmission:
+      drivetrain: 0
+      finalDrive: 3.7
+      gearRatios:
+      - 1.8
+      - 2.5
+      - 1.8
+      - 1.3
+      - 1
+      - 0.8
+      - 0.58
+      clutchHardness: 25
+      shiftTime: 0.25
+    suspension:
+      bodyRollForward: -0.2
+      bodyRollSideways: 0.2
+      frontTrackWidth: 1
+      rearTrackWidth: 1
+      frontAxleOffset: 1
+      rearAxleOffset: 1
+      frontWheelDiameter: 0.55
+      rearWheelDiameter: 0.55
+      suspensionHeight: 0.2
+      suspensionStrengthFront: 3000
+      suspensionStrengthRear: 3000
+      suspensionDamping: 500
+      FrontCamber: 1
+      RearCamber: 1
+    tires:
+      gripCurve:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 4
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 8
+          value: 0
+          inSlope: -0.6569455
+          outSlope: 0
+          tangentMode: 1
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 180
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      grip: 6
+      driftGrip: 4
+      rearGrip: 0.5
+      transitionTime: 5
+      compressionGripMultiplier: 0.62
+    brakes:
+      brakeTorque: 10
+      handbrakeTorque: 5
+      brakeRearBalance: 0.9
+    engine:
+      torqueCurve:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0
+          inSlope: 5.498562
+          outSlope: 5.498562
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0.33333334
+        - serializedVersion: 3
+          time: 0.07257571
+          value: 0.39906204
+          inSlope: 0.5022478
+          outSlope: 0.5022478
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0.04740651
+        - serializedVersion: 3
+          time: 0.21826321
+          value: 0.5875406
+          inSlope: 0.9731382
+          outSlope: 0.9731382
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0.33333334
+        - serializedVersion: 3
+          time: 0.2597122
+          value: 0.62996817
+          inSlope: -0.9705686
+          outSlope: -0.9705686
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0.1807449
+        - serializedVersion: 3
+          time: 0.29084298
+          value: 0.66831046
+          inSlope: 1.5432518
+          outSlope: 1.5432518
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0.33333334
+        - serializedVersion: 3
+          time: 0.33558553
+          value: 0.7319122
+          inSlope: 0.8815067
+          outSlope: 0.8815067
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0.33333334
+        - serializedVersion: 3
+          time: 0.3682861
+          value: 0.74940133
+          inSlope: 1.1874375
+          outSlope: 1.1874375
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0.33333334
+        - serializedVersion: 3
+          time: 0.38603473
+          value: 0.79806745
+          inSlope: 0.94024754
+          outSlope: 0.94024754
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0.33333334
+        - serializedVersion: 3
+          time: 0.55566823
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0.33333334
+        - serializedVersion: 3
+          time: 0.9718111
+          value: 0.9265096
+          inSlope: 0.03867271
+          outSlope: 0.03867271
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0.047383804
+          outWeight: 0.33333334
+        - serializedVersion: 3
+          time: 1
+          value: 0
+          inSlope: -32.86791
+          outSlope: -32.86791
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      redline: 8000
+      idleRPM: 800
+      braking: 1
+      inertia: 0.04
+      maxTorque: 1700
+      rpmLimiter: 100
+      response: 30
+      forcedInductionType: 1
+      forcedInductionPower: 0
+      forcedInductionLag: 1
+  dynamics:
+    steering:
+      turnRate: 2.3
+      stability: 1.7
+      throttleMultiplier: 0.7
+      steeringResponse: 100
+      brakeSteer: 0.2
+      handbrakeSteer: 1
+    drifting:
+      instability: 1.7
+      throttleMultiplier: 0.7
+      steeringResponse: 10
+      alignmentStrength: 0.22
+      alignmentRate: 6
+      forceDirectionAlignment: 1
