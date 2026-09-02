@@ -10046,6 +10046,7 @@ GameObject:
   - component: {fileID: 2008266026}
   - component: {fileID: 2008266028}
   - component: {fileID: 2008266029}
+  - component: {fileID: 2008266030}
   m_Layer: 10
   m_Name: CarController
   m_TagString: Untagged
@@ -10125,7 +10126,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2008266010}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d2fe5546f775c47d2820aa5e8a715f53, type: 3}
   m_Name: 
@@ -10176,7 +10177,7 @@ MonoBehaviour:
       mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089","$version":"A"},"$version":"A"},{"name":"Engine_Inertia","value":{"$content":150.0,"$type":"System.Single"},"typeHandle":{"Identification":"System.Single,
       mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089","$version":"A"},"$version":"A"},{"name":"Engine_Friction","value":{"$content":600.0,"$type":"System.Single"},"typeHandle":{"Identification":"System.Single,
       mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089","$version":"A"},"$version":"A"},{"name":"Engine_Response","value":{"$content":2200.0,"$type":"System.Single"},"typeHandle":{"Identification":"System.Single,
-      mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089","$version":"A"},"$version":"A"},{"name":"Engine_MaxTorque","value":{"$content":1.0,"$type":"System.Single"},"typeHandle":{"Identification":"System.Single,
+      mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089","$version":"A"},"$version":"A"},{"name":"Engine_MaxTorque","value":{"$content":60.0,"$type":"System.Single"},"typeHandle":{"Identification":"System.Single,
       mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089","$version":"A"},"$version":"A"},{"name":"Engine_ChangeRate","value":{"$content":1000.0,"$type":"System.Single"},"typeHandle":{"Identification":"System.Single,
       mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089","$version":"A"},"$version":"A"},{"name":"EngineThrottlePosition","value":{"$content":0.0,"$type":"System.Single"},"typeHandle":{"Identification":"System.Single,
       mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089","$version":"A"},"$version":"A"},{"name":"CurrentSpeed","value":{"$content":0.0,"$type":"System.Single"},"typeHandle":{"Identification":"System.Single,
@@ -10531,6 +10532,41 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &2008266030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2008266010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a895a19c6c85a954ea61ef6934104e46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::VehicleSuspension
+  wheelDiameterFront: 0.55
+  wheelDiameterRear: 0.55
+  suspensionHeight: 0.2
+  suspensionStrengthF: 3000
+  suspensionStrengthR: 3000
+  suspensionDamping: 820
+  dampingMaxPositive: 200
+  dampingMaxNegative: -5000
+  groundLayerMask:
+    serializedVersion: 2
+    m_Bits: 512
+  compressionGripMultiplier: 20.39
+  suspensionPoints:
+    frontLeft: {fileID: 762284835}
+    frontRight: {fileID: 1015127298}
+    rearLeft: {fileID: 558461721}
+    rearRight: {fileID: 2006368842}
+  hubs:
+    frontLeft: {fileID: 1024276238}
+    frontRight: {fileID: 492375439}
+    rearLeft: {fileID: 1945675491}
+    rearRight: {fileID: 1448971500}
+  showDebugOverlay: 1
 --- !u!1001 &2030683113
 PrefabInstance:
   m_ObjectHideFlags: 0
