@@ -9845,6 +9845,7 @@ GameObject:
   - component: {fileID: 2008266029}
   - component: {fileID: 2008266030}
   - component: {fileID: 2008266031}
+  - component: {fileID: 2008266032}
   m_Layer: 10
   m_Name: CarController
   m_TagString: Untagged
@@ -10382,6 +10383,29 @@ MonoBehaviour:
   brakeTorque: 10
   handbrakeTorque: 10
   handbrakeSmoothSpeed: 5
+--- !u!114 &2008266032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2008266010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bbb3d239c36c5048a31439856037a91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::VehicleGearbox
+  shiftUpAction: {fileID: 7040659881675835329, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+  shiftDownAction: {fileID: 2411907206095950430, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+  reverseGearRatio: 1.8
+  gearRatios:
+  - 2.5
+  - 1.8
+  - 1.3
+  - 1
+  - 0.8
+  - 0.58
+  shiftTime: 0.3
 --- !u!1001 &2030683113
 PrefabInstance:
   m_ObjectHideFlags: 0
