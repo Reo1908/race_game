@@ -27,6 +27,10 @@ public class VehicleGearbox : MonoBehaviour
     [Tooltip("Total time for one shift. Half spent with ignition/clutch cut before the gear changes, half after (matches the graph's two WaitForSeconds calls at ShiftTime * 0.5 each).")]
     [SerializeField] private float shiftTime = 0.3f;
 
+    [Header("Debug")]
+    [Tooltip("Show gearbox status top-left of the screen in Play Mode. Drawn below VehicleSuspension's debug overlay so the two don't overlap.")]
+    [SerializeField] private bool showDebugOverlay = false;
+
     // Outputs for other scripts to read.
     public int Ignition { get; private set; }
     public int Clutch { get; private set; }
@@ -116,5 +120,20 @@ public class VehicleGearbox : MonoBehaviour
         if (gear <= 0) return reverseGearRatio;
         int i = gear - 1;
         return i < gearRatios.Count ? gearRatios[i] : 0f;
+    }
+
+    private void OnGUI()
+    {
+        if (!showDebugOverlay || !Application.isPlaying) return;
+
+        bool canShiftUp = currentGear < gearCount - 1 && canShift;
+        bool canShiftDown = currentGear > 0 && canShift;
+
+        // Starts at y=70 so it sits below VehicleSuspension's overlay (which uses 10/28/46).
+        GUI.Label(new Rect(10, 70, 320, 20), $"Current Gear: {currentGear}");
+        GUI.Label(new Rect(10, 88, 320, 20), $"Current Gear Ratio: {CurrentGearRatio:F3}");
+        GUI.Label(new Rect(10, 106, 320, 20), $"Ignition: {Ignition}");
+        GUI.Label(new Rect(10, 124, 320, 20), $"Drivetrain Direction: {DrivetrainDirection}");
+        GUI.Label(new Rect(10, 142, 320, 20), $"Can Shift Up: {canShiftUp}   Can Shift Down: {canShiftDown}");
     }
 }
