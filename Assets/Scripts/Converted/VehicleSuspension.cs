@@ -60,6 +60,9 @@ public class VehicleSuspension : MonoBehaviour
     public float FrontAxleCompression { get; private set; }
     public float RearAxleCompression { get; private set; }
     public float AverageCompression { get; private set; }
+    // Added so VehicleEngine can pick the right wheel diameter for its RPM math.
+    public float WheelDiameterFront => wheelDiameterFront;
+    public float WheelDiameterRear => wheelDiameterRear;
 
     private Rigidbody rb;
     private Transform[] points; // cached corner order: 0=FL, 1=FR, 2=RL, 3=RR

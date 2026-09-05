@@ -177,3 +177,20 @@ MonoBehaviour:
   renderPassEvent: 550
   tintColor: {r: 1, g: 0, b: 1, a: 1}
   tintAmount: 0.5
+--- !u!114 &5880962504043781086
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3940455bb1484934d8e5b18b2d0e8d63, type: 3}
+  m_Name: SmokeVolumeFeature
+  m_EditorClassIdentifier: Assembly-CSharp::TireSmoke.SmokeVolumeFeature
+  m_Active: 1
+  settings:
+    smokeVolumeLayer:
+      serializedVersion: 2
+      m_Bits: 4294967295
