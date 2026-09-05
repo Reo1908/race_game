@@ -74,6 +74,9 @@ public class VehicleEngine : MonoBehaviour
     public float EngineOutput { get; private set; }
     public float CurrentRPM { get; private set; }
 
+    /// <summary>RPM the rev limiter cuts at. Read-only for HUD/UI.</summary>
+    public float EngineRedline { get { return engineRedline; } }
+
     private Rigidbody rb;
     private VehicleSuspension suspension;
     private VehicleGearbox gearbox;
