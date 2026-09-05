@@ -1,0 +1,3295 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!29 &1
+OcclusionCullingSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_OcclusionBakeSettings:
+    smallestOccluder: 5
+    smallestHole: 0.25
+    backfaceThreshold: 100
+  m_SceneGUID: 00000000000000000000000000000000
+  m_OcclusionCullingData: {fileID: 0}
+--- !u!104 &2
+RenderSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 10
+  m_Fog: 0
+  m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  m_FogMode: 3
+  m_FogDensity: 0.01
+  m_LinearFogStart: 0
+  m_LinearFogEnd: 300
+  m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
+  m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
+  m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
+  m_AmbientIntensity: 1
+  m_AmbientMode: 0
+  m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
+  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_HaloStrength: 0.5
+  m_FlareStrength: 1
+  m_FlareFadeSpeed: 3
+  m_HaloTexture: {fileID: 0}
+  m_SpotCookie: {fileID: 10001, guid: 0000000000000000e000000000000000, type: 0}
+  m_DefaultReflectionMode: 0
+  m_DefaultReflectionResolution: 128
+  m_ReflectionBounces: 1
+  m_ReflectionIntensity: 1
+  m_CustomReflection: {fileID: 0}
+  m_Sun: {fileID: 0}
+  m_UseRadianceAmbientProbe: 0
+--- !u!157 &3
+LightmapSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 13
+  m_BakeOnSceneLoad: 0
+  m_GISettings:
+    serializedVersion: 2
+    m_BounceScale: 1
+    m_IndirectOutputScale: 1
+    m_AlbedoBoost: 1
+    m_EnvironmentLightingMode: 0
+    m_EnableBakedLightmaps: 1
+    m_EnableRealtimeLightmaps: 0
+  m_LightmapEditorSettings:
+    serializedVersion: 12
+    m_Resolution: 2
+    m_BakeResolution: 40
+    m_AtlasSize: 1024
+    m_AO: 0
+    m_AOMaxDistance: 1
+    m_CompAOExponent: 1
+    m_CompAOExponentDirect: 0
+    m_ExtractAmbientOcclusion: 0
+    m_Padding: 2
+    m_LightmapParameters: {fileID: 0}
+    m_LightmapsBakeMode: 1
+    m_TextureCompression: 1
+    m_ReflectionCompression: 2
+    m_MixedBakeMode: 2
+    m_BakeBackend: 2
+    m_PVRSampling: 1
+    m_PVRDirectSampleCount: 32
+    m_PVRSampleCount: 512
+    m_PVRBounces: 2
+    m_PVREnvironmentSampleCount: 256
+    m_PVREnvironmentReferencePointCount: 2048
+    m_PVRFilteringMode: 1
+    m_PVRDenoiserTypeDirect: 1
+    m_PVRDenoiserTypeIndirect: 1
+    m_PVRDenoiserTypeAO: 1
+    m_PVRFilterTypeDirect: 0
+    m_PVRFilterTypeIndirect: 0
+    m_PVRFilterTypeAO: 0
+    m_PVREnvironmentMIS: 1
+    m_PVRCulling: 1
+    m_PVRFilteringGaussRadiusDirect: 1
+    m_PVRFilteringGaussRadiusIndirect: 1
+    m_PVRFilteringGaussRadiusAO: 1
+    m_PVRFilteringAtrousPositionSigmaDirect: 0.5
+    m_PVRFilteringAtrousPositionSigmaIndirect: 2
+    m_PVRFilteringAtrousPositionSigmaAO: 1
+    m_ExportTrainingData: 0
+    m_TrainingDataDestination: TrainingData
+    m_LightProbeSampleCountMultiplier: 4
+  m_LightingDataAsset: {fileID: 20201, guid: 0000000000000000f000000000000000, type: 0}
+  m_LightingSettings: {fileID: 0}
+--- !u!196 &4
+NavMeshSettings:
+  serializedVersion: 2
+  m_ObjectHideFlags: 0
+  m_BuildSettings:
+    serializedVersion: 3
+    agentTypeID: 0
+    agentRadius: 0.5
+    agentHeight: 2
+    agentSlope: 45
+    agentClimb: 0.4
+    ledgeDropHeight: 0
+    maxJumpAcrossDistance: 0
+    minRegionArea: 2
+    manualCellSize: 0
+    cellSize: 0.16666667
+    manualTileSize: 0
+    tileSize: 256
+    buildHeightMesh: 0
+    maxJobWorkers: 0
+    preserveTilesOutsideBounds: 0
+    debug:
+      m_Flags: 0
+  m_NavMeshData: {fileID: 0}
+--- !u!1 &274472089
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 274472090}
+  - component: {fileID: 274472093}
+  - component: {fileID: 274472092}
+  - component: {fileID: 274472091}
+  m_Layer: 0
+  m_Name: Tailpipe (exhaust side, -Z)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &274472090
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 274472089}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0.45, y: 0.35, z: -2.3}
+  m_LocalScale: {x: 0.22, y: 0.35, z: 0.22}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 678290360}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!23 &274472091
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 274472089}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: e927f045948999943b2b1c6f7ef1e792, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 1
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_MaskInteraction: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!136 &274472092
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 274472089}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!33 &274472093
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 274472089}
+  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &311946336
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 311946340}
+  - component: {fileID: 311946339}
+  - component: {fileID: 311946338}
+  - component: {fileID: 311946337}
+  m_Layer: 0
+  m_Name: Ground
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!23 &311946337
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 311946336}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: c3d2a584f634e874c8b9511cfc52b707, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 1
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_MaskInteraction: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &311946338
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 311946336}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!33 &311946339
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 311946336}
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &311946340
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 311946336}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 6, y: 1, z: 6}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &320791664
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 320791668}
+  - component: {fileID: 320791667}
+  - component: {fileID: 320791666}
+  - component: {fileID: 320791665}
+  m_Layer: 0
+  m_Name: Main Camera (listener)
+  m_TagString: MainCamera
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &320791665
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 320791664}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02fce87b2dade4f45b463b852bee2079, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RevAudio.RevListenerOrbit
+  target: {fileID: 678290360}
+  distance: 6
+  height: 1.4
+  angleDegrees: 35
+  autoOrbit: 0
+  orbitSpeed: 35
+  lookAtTarget: 1
+  showPanel: 1
+--- !u!81 &320791666
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 320791664}
+  m_Enabled: 1
+--- !u!20 &320791667
+Camera:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 320791664}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_ClearFlags: 1
+  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_projectionMatrixMode: 1
+  m_GateFitMode: 2
+  m_FOVAxisMode: 0
+  m_Iso: 200
+  m_ShutterSpeed: 0.005
+  m_Aperture: 16
+  m_FocusDistance: 10
+  m_FocalLength: 50
+  m_BladeCount: 5
+  m_Curvature: {x: 2, y: 11}
+  m_BarrelClipping: 0.25
+  m_Anamorphism: 0
+  m_SensorSize: {x: 36, y: 24}
+  m_LensShift: {x: 0, y: 0}
+  m_NormalizedViewPortRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+  near clip plane: 0.3
+  far clip plane: 1000
+  field of view: 60
+  orthographic: 0
+  orthographic size: 5
+  m_Depth: -1
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingPath: -1
+  m_TargetTexture: {fileID: 0}
+  m_TargetDisplay: 0
+  m_TargetEye: 3
+  m_HDR: 1
+  m_AllowMSAA: 1
+  m_AllowDynamicResolution: 0
+  m_ForceIntoRT: 0
+  m_OcclusionCulling: 1
+  m_StereoConvergence: 10
+  m_StereoSeparation: 0.022
+--- !u!4 &320791668
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 320791664}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &678290356
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 678290360}
+  - component: {fileID: 678290359}
+  - component: {fileID: 678290358}
+  - component: {fileID: 678290357}
+  m_Layer: 0
+  m_Name: Car (REV granular engine)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &678290357
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 678290356}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 755eac3d012799a4fb33a00921c006cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RevAudio.RevTestDriver
+  engine: {fileID: 678290358}
+  mode: 0
+  throttle: 0
+  revUpRate: 9000
+  engineBrakeRate: 5000
+  rpmDrag: 0.9
+  gearLoad: 0.55
+  limiterEnabled: 1
+  limiterCutMs: 55
+  limiterCutDepth: 1
+  gearRatios:
+  - 3.6
+  - 2.35
+  - 1.72
+  - 1.32
+  - 1.06
+  - 0.86
+  shiftCutMs: 110
+  autoShift: 1
+  autoShiftUpAt: 0.95
+  autoShiftDownAt: 0.35
+  showPanel: 1
+  showMeters: 1
+--- !u!114 &678290358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 678290356}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c9ee782ed2bd144db4cc66ec2a00765, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RevAudio.RevGranularEngine
+  engineUp:
+    enabled: 1
+    clip: {fileID: 8300000, guid: 0b1b464c6838b334d9197d924413a828, type: 3}
+    playheadRange: {x: 0.02, y: 0.98}
+    rpmAtRangeStart: 4494.237
+    rpmAtRangeEnd: 4616.8765
+    positionToRpm:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 1
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 1
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    useDetectedProfile: 1
+    gainDb: 0
+    pitchTrimCents: 0
+    stereoWidth: 1
+    forceMono: 0
+    detectedRpm:
+    - 4491.6816
+    - 4491.9316
+    - 4492.1816
+    - 4492.4316
+    - 4492.6816
+    - 4492.9316
+    - 4493.1816
+    - 4493.4316
+    - 4493.6816
+    - 4493.9316
+    - 4494.1816
+    - 4494.4316
+    - 4494.6816
+    - 4494.9316
+    - 4495.1816
+    - 4495.4316
+    - 4495.6816
+    - 4495.9316
+    - 4496.1816
+    - 4496.4316
+    - 4496.6816
+    - 4496.9316
+    - 4497.1816
+    - 4497.4316
+    - 4497.6816
+    - 4497.9316
+    - 4498.1816
+    - 4498.4316
+    - 4498.6816
+    - 4498.9316
+    - 4499.1816
+    - 4499.4316
+    - 4499.6816
+    - 4499.9316
+    - 4500.1816
+    - 4500.4316
+    - 4500.6816
+    - 4500.9316
+    - 4501.1816
+    - 4501.4316
+    - 4501.6816
+    - 4501.9316
+    - 4502.1816
+    - 4502.4316
+    - 4502.6816
+    - 4502.9316
+    - 4503.1816
+    - 4503.4316
+    - 4503.6816
+    - 4503.9316
+    - 4504.1816
+    - 4504.4316
+    - 4504.6816
+    - 4504.9316
+    - 4505.1816
+    - 4505.4316
+    - 4505.6816
+    - 4505.9316
+    - 4506.1816
+    - 4506.4316
+    - 4506.6816
+    - 4506.9316
+    - 4507.1816
+    - 4507.4316
+    - 4507.6816
+    - 4507.9316
+    - 4508.1816
+    - 4508.4316
+    - 4508.6816
+    - 4508.9316
+    - 4509.1816
+    - 4509.4316
+    - 4509.6816
+    - 4509.9316
+    - 4510.1816
+    - 4510.4316
+    - 4510.6816
+    - 4510.9316
+    - 4511.1816
+    - 4511.4316
+    - 4511.6816
+    - 4511.9316
+    - 4512.1816
+    - 4512.4316
+    - 4512.6816
+    - 4512.9316
+    - 4513.1816
+    - 4513.4316
+    - 4513.6816
+    - 4513.9316
+    - 4514.1816
+    - 4514.4316
+    - 4514.6816
+    - 4514.9316
+    - 4515.1816
+    - 4515.4316
+    - 4515.6816
+    - 4515.9316
+    - 4516.1816
+    - 4516.4316
+    - 4516.6816
+    - 4516.9316
+    - 4517.1816
+    - 4517.4316
+    - 4517.6816
+    - 4517.9316
+    - 4518.1816
+    - 4518.4316
+    - 4518.6816
+    - 4518.9316
+    - 4519.1816
+    - 4519.4316
+    - 4519.6816
+    - 4519.9316
+    - 4520.1816
+    - 4520.4316
+    - 4520.6816
+    - 4520.9316
+    - 4521.1816
+    - 4521.4316
+    - 4521.6816
+    - 4521.9316
+    - 4522.1816
+    - 4522.4316
+    - 4522.6816
+    - 4522.9316
+    - 4523.1816
+    - 4523.4316
+    - 4523.6816
+    - 4523.9316
+    - 4524.1816
+    - 4524.4316
+    - 4524.6816
+    - 4524.9316
+    - 4525.1816
+    - 4525.4316
+    - 4525.6816
+    - 4525.9316
+    - 4526.1816
+    - 4526.4316
+    - 4526.6816
+    - 4526.9316
+    - 4527.1816
+    - 4527.4316
+    - 4527.6816
+    - 4527.9316
+    - 4528.1816
+    - 4528.4316
+    - 4528.6816
+    - 4528.9316
+    - 4529.1816
+    - 4529.4316
+    - 4529.6816
+    - 4529.9316
+    - 4530.1816
+    - 4530.4316
+    - 4530.6816
+    - 4530.9316
+    - 4531.1816
+    - 4531.4316
+    - 4531.6816
+    - 4531.9316
+    - 4532.1816
+    - 4532.4316
+    - 4532.6816
+    - 4532.9316
+    - 4533.1816
+    - 4533.4316
+    - 4533.6816
+    - 4533.9316
+    - 4534.1816
+    - 4534.4316
+    - 4534.6816
+    - 4534.9316
+    - 4535.1816
+    - 4535.4316
+    - 4535.6816
+    - 4535.9316
+    - 4536.1816
+    - 4536.4316
+    - 4536.6816
+    - 4536.9316
+    - 4537.1816
+    - 4537.4316
+    - 4537.6816
+    - 4537.9316
+    - 4538.1816
+    - 4538.4316
+    - 4538.6816
+    - 4538.9316
+    - 4539.1816
+    - 4539.4316
+    - 4539.6816
+    - 4539.9316
+    - 4540.1816
+    - 4540.4316
+    - 4540.6816
+    - 4540.9316
+    - 4541.1816
+    - 4541.4316
+    - 4541.6816
+    - 4541.9316
+    - 4542.1816
+    - 4542.4316
+    - 4542.6816
+    - 4542.9316
+    - 4543.1816
+    - 4543.4316
+    - 4543.6816
+    - 4543.9316
+    - 4544.1816
+    - 4544.4316
+    - 4544.6816
+    - 4544.9316
+    - 4545.1816
+    - 4545.4316
+    - 4545.6816
+    - 4545.9316
+    - 4546.1816
+    - 4546.4316
+    - 4546.6816
+    - 4546.9316
+    - 4547.1816
+    - 4547.4316
+    - 4547.6816
+    - 4547.9316
+    - 4548.1816
+    - 4548.4316
+    - 4548.6816
+    - 4548.9316
+    - 4549.1816
+    - 4549.4316
+    - 4549.6816
+    - 4549.9316
+    - 4550.1816
+    - 4550.4316
+    - 4550.6816
+    - 4550.9316
+    - 4551.1816
+    - 4551.4316
+    - 4551.6816
+    - 4551.9316
+    - 4552.1816
+    - 4552.4316
+    - 4552.6816
+    - 4552.9316
+    - 4553.1816
+    - 4553.4316
+    - 4553.6816
+    - 4553.9316
+    - 4554.1816
+    - 4554.4316
+    - 4554.6816
+    - 4554.9316
+    - 4555.1816
+    - 4555.4316
+    - 4555.6816
+    - 4555.9316
+    - 4556.1816
+    - 4556.4316
+    - 4556.6816
+    - 4556.9316
+    - 4557.1816
+    - 4557.4316
+    - 4557.6816
+    - 4557.9316
+    - 4558.1816
+    - 4558.4316
+    - 4558.6816
+    - 4558.9316
+    - 4559.1816
+    - 4559.4316
+    - 4559.6816
+    - 4559.9316
+    - 4560.1816
+    - 4560.4316
+    - 4560.6816
+    - 4560.9316
+    - 4561.1816
+    - 4561.4316
+    - 4561.6816
+    - 4561.9316
+    - 4562.1816
+    - 4562.4316
+    - 4562.6816
+    - 4562.9316
+    - 4563.1816
+    - 4563.4316
+    - 4563.6816
+    - 4563.9316
+    - 4564.1816
+    - 4564.4316
+    - 4564.6816
+    - 4564.9316
+    - 4565.1816
+    - 4565.4316
+    - 4565.6816
+    - 4565.9316
+    - 4566.1816
+    - 4566.4316
+    - 4566.6816
+    - 4566.9316
+    - 4567.1816
+    - 4567.4316
+    - 4567.6816
+    - 4567.9316
+    - 4568.1816
+    - 4568.4316
+    - 4568.6816
+    - 4568.9316
+    - 4569.1816
+    - 4569.4316
+    - 4569.6816
+    - 4569.9316
+    - 4570.1816
+    - 4570.4316
+    - 4570.6816
+    - 4570.9316
+    - 4571.1816
+    - 4571.4316
+    - 4571.6816
+    - 4571.9316
+    - 4572.1816
+    - 4572.4316
+    - 4572.6816
+    - 4572.9316
+    - 4573.1816
+    - 4573.4316
+    - 4573.6816
+    - 4573.9316
+    - 4574.1816
+    - 4574.4316
+    - 4574.6816
+    - 4574.9316
+    - 4575.1816
+    - 4575.4316
+    - 4575.6816
+    - 4575.9316
+    - 4576.1816
+    - 4576.4316
+    - 4576.6816
+    - 4576.9316
+    - 4577.1816
+    - 4577.4316
+    - 4577.6816
+    - 4577.9316
+    - 4578.1816
+    - 4578.4316
+    - 4578.6816
+    - 4578.9316
+    - 4579.1816
+    - 4579.4316
+    - 4579.6816
+    - 4579.9316
+    - 4580.1816
+    - 4580.4316
+    - 4580.6816
+    - 4580.9316
+    - 4581.1816
+    - 4581.4316
+    - 4581.6816
+    - 4581.9316
+    - 4582.1816
+    - 4582.4316
+    - 4582.6816
+    - 4582.9316
+    - 4583.1816
+    - 4583.4316
+    - 4583.6816
+    - 4583.9316
+    - 4584.1816
+    - 4584.4316
+    - 4584.6816
+    - 4584.9316
+    - 4585.1816
+    - 4585.4316
+    - 4585.6816
+    - 4585.9316
+    - 4586.1816
+    - 4586.4316
+    - 4586.6816
+    - 4586.9316
+    - 4587.1816
+    - 4587.4316
+    - 4587.6816
+    - 4587.9316
+    - 4588.1816
+    - 4588.4316
+    - 4588.6816
+    - 4588.9316
+    - 4589.1816
+    - 4589.4316
+    - 4589.6816
+    - 4589.9316
+    - 4590.1816
+    - 4590.4316
+    - 4590.6816
+    - 4590.9316
+    - 4591.1816
+    - 4591.4316
+    - 4591.6816
+    - 4591.9316
+    - 4592.1816
+    - 4592.4316
+    - 4592.6816
+    - 4592.9316
+    - 4593.1816
+    - 4593.4316
+    - 4593.6816
+    - 4593.9316
+    - 4594.1816
+    - 4594.4316
+    - 4594.6816
+    - 4594.9316
+    - 4595.1816
+    - 4595.4316
+    - 4595.6816
+    - 4595.9316
+    - 4596.1816
+    - 4596.4316
+    - 4596.6816
+    - 4596.9316
+    - 4597.1816
+    - 4597.4316
+    - 4597.6816
+    - 4597.9316
+    - 4598.1816
+    - 4598.4316
+    - 4598.6816
+    - 4598.9316
+    - 4599.1816
+    - 4599.4316
+    - 4599.6816
+    - 4599.9316
+    - 4600.1816
+    - 4600.4316
+    - 4600.6816
+    - 4600.9316
+    - 4601.1816
+    - 4601.4316
+    - 4601.6816
+    - 4601.9316
+    - 4602.1816
+    - 4602.4316
+    - 4602.6816
+    - 4602.9316
+    - 4603.1816
+    - 4603.4316
+    - 4603.6816
+    - 4603.9316
+    - 4604.1816
+    - 4604.4316
+    - 4604.6816
+    - 4604.9316
+    - 4605.1816
+    - 4605.4316
+    - 4605.6816
+    - 4605.9316
+    - 4606.1816
+    - 4606.4316
+    - 4606.6816
+    - 4606.9316
+    - 4607.1816
+    - 4607.4316
+    - 4607.6816
+    - 4607.9316
+    - 4608.1816
+    - 4608.4316
+    - 4608.6816
+    - 4608.9316
+    - 4609.1816
+    - 4609.4316
+    - 4609.6816
+    - 4609.9316
+    - 4610.1816
+    - 4610.4316
+    - 4610.6816
+    - 4610.9316
+    - 4611.1816
+    - 4611.4316
+    - 4611.6816
+    - 4611.9316
+    - 4612.1816
+    - 4612.4316
+    - 4612.6816
+    - 4612.9316
+    - 4613.1816
+    - 4613.4316
+    - 4613.6816
+    - 4613.9316
+    - 4614.1816
+    - 4614.4316
+    - 4614.6816
+    - 4614.9316
+    - 4615.1816
+    - 4615.4316
+    - 4615.6816
+    - 4615.9316
+    - 4616.1816
+    - 4616.4316
+    - 4616.6816
+    - 4616.9316
+    - 4617.1816
+    - 4617.4316
+    - 4617.6816
+    - 4617.9316
+    - 4618.1816
+    - 4618.4316
+    - 4618.6816
+    - 4618.9316
+    - 4619.1816
+    - 4619.4316
+    detectedMinRpm: 4491.6816
+    detectedMaxRpm: 4619.4316
+    detectedCylinders: 4
+    hasProfile: 1
+  engineDown:
+    enabled: 1
+    clip: {fileID: 8300000, guid: 6da18dca595c0134091fc6225bd39c82, type: 3}
+    playheadRange: {x: 0.02, y: 0.98}
+    rpmAtRangeStart: 4489.775
+    rpmAtRangeEnd: 4367.1353
+    positionToRpm:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 1
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 1
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    useDetectedProfile: 1
+    gainDb: 0
+    pitchTrimCents: 0
+    stereoWidth: 1
+    forceMono: 0
+    detectedRpm:
+    - 4492.33
+    - 4492.08
+    - 4491.83
+    - 4491.58
+    - 4491.33
+    - 4491.08
+    - 4490.83
+    - 4490.58
+    - 4490.33
+    - 4490.08
+    - 4489.83
+    - 4489.58
+    - 4489.33
+    - 4489.08
+    - 4488.83
+    - 4488.58
+    - 4488.33
+    - 4488.08
+    - 4487.83
+    - 4487.58
+    - 4487.33
+    - 4487.08
+    - 4486.83
+    - 4486.58
+    - 4486.33
+    - 4486.08
+    - 4485.83
+    - 4485.58
+    - 4485.33
+    - 4485.08
+    - 4484.83
+    - 4484.58
+    - 4484.33
+    - 4484.08
+    - 4483.83
+    - 4483.58
+    - 4483.33
+    - 4483.08
+    - 4482.83
+    - 4482.58
+    - 4482.33
+    - 4482.08
+    - 4481.83
+    - 4481.58
+    - 4481.33
+    - 4481.08
+    - 4480.83
+    - 4480.58
+    - 4480.33
+    - 4480.08
+    - 4479.83
+    - 4479.58
+    - 4479.33
+    - 4479.08
+    - 4478.83
+    - 4478.58
+    - 4478.33
+    - 4478.08
+    - 4477.83
+    - 4477.58
+    - 4477.33
+    - 4477.08
+    - 4476.83
+    - 4476.58
+    - 4476.33
+    - 4476.08
+    - 4475.83
+    - 4475.58
+    - 4475.33
+    - 4475.08
+    - 4474.83
+    - 4474.58
+    - 4474.33
+    - 4474.08
+    - 4473.83
+    - 4473.58
+    - 4473.33
+    - 4473.08
+    - 4472.83
+    - 4472.58
+    - 4472.33
+    - 4472.08
+    - 4471.83
+    - 4471.58
+    - 4471.33
+    - 4471.08
+    - 4470.83
+    - 4470.58
+    - 4470.33
+    - 4470.08
+    - 4469.83
+    - 4469.58
+    - 4469.33
+    - 4469.08
+    - 4468.83
+    - 4468.58
+    - 4468.33
+    - 4468.08
+    - 4467.83
+    - 4467.58
+    - 4467.33
+    - 4467.08
+    - 4466.83
+    - 4466.58
+    - 4466.33
+    - 4466.08
+    - 4465.83
+    - 4465.58
+    - 4465.33
+    - 4465.08
+    - 4464.83
+    - 4464.58
+    - 4464.33
+    - 4464.08
+    - 4463.83
+    - 4463.58
+    - 4463.33
+    - 4463.08
+    - 4462.83
+    - 4462.58
+    - 4462.33
+    - 4462.08
+    - 4461.83
+    - 4461.58
+    - 4461.33
+    - 4461.08
+    - 4460.83
+    - 4460.58
+    - 4460.33
+    - 4460.08
+    - 4459.83
+    - 4459.58
+    - 4459.33
+    - 4459.08
+    - 4458.83
+    - 4458.58
+    - 4458.33
+    - 4458.08
+    - 4457.83
+    - 4457.58
+    - 4457.33
+    - 4457.08
+    - 4456.83
+    - 4456.58
+    - 4456.33
+    - 4456.08
+    - 4455.83
+    - 4455.58
+    - 4455.33
+    - 4455.08
+    - 4454.83
+    - 4454.58
+    - 4454.33
+    - 4454.08
+    - 4453.83
+    - 4453.58
+    - 4453.33
+    - 4453.08
+    - 4452.83
+    - 4452.58
+    - 4452.33
+    - 4452.08
+    - 4451.83
+    - 4451.58
+    - 4451.33
+    - 4451.08
+    - 4450.83
+    - 4450.58
+    - 4450.33
+    - 4450.08
+    - 4449.83
+    - 4449.58
+    - 4449.33
+    - 4449.08
+    - 4448.83
+    - 4448.58
+    - 4448.33
+    - 4448.08
+    - 4447.83
+    - 4447.58
+    - 4447.33
+    - 4447.08
+    - 4446.83
+    - 4446.58
+    - 4446.33
+    - 4446.08
+    - 4445.83
+    - 4445.58
+    - 4445.33
+    - 4445.08
+    - 4444.83
+    - 4444.58
+    - 4444.33
+    - 4444.08
+    - 4443.83
+    - 4443.58
+    - 4443.33
+    - 4443.08
+    - 4442.83
+    - 4442.58
+    - 4442.33
+    - 4442.08
+    - 4441.83
+    - 4441.58
+    - 4441.33
+    - 4441.08
+    - 4440.83
+    - 4440.58
+    - 4440.33
+    - 4440.08
+    - 4439.83
+    - 4439.58
+    - 4439.33
+    - 4439.08
+    - 4438.83
+    - 4438.58
+    - 4438.33
+    - 4438.08
+    - 4437.83
+    - 4437.58
+    - 4437.33
+    - 4437.08
+    - 4436.83
+    - 4436.58
+    - 4436.33
+    - 4436.08
+    - 4435.83
+    - 4435.58
+    - 4435.33
+    - 4435.08
+    - 4434.83
+    - 4434.58
+    - 4434.33
+    - 4434.08
+    - 4433.83
+    - 4433.58
+    - 4433.33
+    - 4433.08
+    - 4432.83
+    - 4432.58
+    - 4432.33
+    - 4432.08
+    - 4431.83
+    - 4431.58
+    - 4431.33
+    - 4431.08
+    - 4430.83
+    - 4430.58
+    - 4430.33
+    - 4430.08
+    - 4429.83
+    - 4429.58
+    - 4429.33
+    - 4429.08
+    - 4428.83
+    - 4428.58
+    - 4428.33
+    - 4428.08
+    - 4427.83
+    - 4427.58
+    - 4427.33
+    - 4427.08
+    - 4426.83
+    - 4426.58
+    - 4426.33
+    - 4426.08
+    - 4425.83
+    - 4425.58
+    - 4425.33
+    - 4425.08
+    - 4424.83
+    - 4424.58
+    - 4424.33
+    - 4424.08
+    - 4423.83
+    - 4423.58
+    - 4423.33
+    - 4423.08
+    - 4422.83
+    - 4422.58
+    - 4422.33
+    - 4422.08
+    - 4421.83
+    - 4421.58
+    - 4421.33
+    - 4421.08
+    - 4420.83
+    - 4420.58
+    - 4420.33
+    - 4420.08
+    - 4419.83
+    - 4419.58
+    - 4419.33
+    - 4419.08
+    - 4418.83
+    - 4418.58
+    - 4418.33
+    - 4418.08
+    - 4417.83
+    - 4417.58
+    - 4417.33
+    - 4417.08
+    - 4416.83
+    - 4416.58
+    - 4416.33
+    - 4416.08
+    - 4415.83
+    - 4415.58
+    - 4415.33
+    - 4415.08
+    - 4414.83
+    - 4414.58
+    - 4414.33
+    - 4414.08
+    - 4413.83
+    - 4413.58
+    - 4413.33
+    - 4413.08
+    - 4412.83
+    - 4412.58
+    - 4412.33
+    - 4412.08
+    - 4411.83
+    - 4411.58
+    - 4411.33
+    - 4411.08
+    - 4410.83
+    - 4410.58
+    - 4410.33
+    - 4410.08
+    - 4409.83
+    - 4409.58
+    - 4409.33
+    - 4409.08
+    - 4408.83
+    - 4408.58
+    - 4408.33
+    - 4408.08
+    - 4407.83
+    - 4407.58
+    - 4407.33
+    - 4407.08
+    - 4406.83
+    - 4406.58
+    - 4406.33
+    - 4406.08
+    - 4405.83
+    - 4405.58
+    - 4405.33
+    - 4405.08
+    - 4404.83
+    - 4404.58
+    - 4404.33
+    - 4404.08
+    - 4403.83
+    - 4403.58
+    - 4403.33
+    - 4403.08
+    - 4402.83
+    - 4402.58
+    - 4402.33
+    - 4402.08
+    - 4401.83
+    - 4401.58
+    - 4401.33
+    - 4401.08
+    - 4400.83
+    - 4400.58
+    - 4400.33
+    - 4400.08
+    - 4399.83
+    - 4399.58
+    - 4399.33
+    - 4399.08
+    - 4398.83
+    - 4398.58
+    - 4398.33
+    - 4398.08
+    - 4397.83
+    - 4397.58
+    - 4397.33
+    - 4397.08
+    - 4396.83
+    - 4396.58
+    - 4396.33
+    - 4396.08
+    - 4395.83
+    - 4395.58
+    - 4395.33
+    - 4395.08
+    - 4394.83
+    - 4394.58
+    - 4394.33
+    - 4394.08
+    - 4393.83
+    - 4393.58
+    - 4393.33
+    - 4393.08
+    - 4392.83
+    - 4392.58
+    - 4392.33
+    - 4392.08
+    - 4391.83
+    - 4391.58
+    - 4391.33
+    - 4391.08
+    - 4390.83
+    - 4390.58
+    - 4390.33
+    - 4390.08
+    - 4389.83
+    - 4389.58
+    - 4389.33
+    - 4389.08
+    - 4388.83
+    - 4388.58
+    - 4388.33
+    - 4388.08
+    - 4387.83
+    - 4387.58
+    - 4387.33
+    - 4387.08
+    - 4386.83
+    - 4386.58
+    - 4386.33
+    - 4386.08
+    - 4385.83
+    - 4385.58
+    - 4385.33
+    - 4385.08
+    - 4384.83
+    - 4384.58
+    - 4384.33
+    - 4384.08
+    - 4383.83
+    - 4383.58
+    - 4383.33
+    - 4383.08
+    - 4382.83
+    - 4382.58
+    - 4382.33
+    - 4382.08
+    - 4381.83
+    - 4381.58
+    - 4381.33
+    - 4381.08
+    - 4380.83
+    - 4380.58
+    - 4380.33
+    - 4380.08
+    - 4379.83
+    - 4379.58
+    - 4379.33
+    - 4379.08
+    - 4378.83
+    - 4378.58
+    - 4378.33
+    - 4378.08
+    - 4377.83
+    - 4377.58
+    - 4377.33
+    - 4377.08
+    - 4376.83
+    - 4376.58
+    - 4376.33
+    - 4376.08
+    - 4375.83
+    - 4375.58
+    - 4375.33
+    - 4375.08
+    - 4374.83
+    - 4374.58
+    - 4374.33
+    - 4374.08
+    - 4373.83
+    - 4373.58
+    - 4373.33
+    - 4373.08
+    - 4372.83
+    - 4372.58
+    - 4372.33
+    - 4372.08
+    - 4371.83
+    - 4371.58
+    - 4371.33
+    - 4371.08
+    - 4370.83
+    - 4370.58
+    - 4370.33
+    - 4370.08
+    - 4369.83
+    - 4369.58
+    - 4369.33
+    - 4369.08
+    - 4368.83
+    - 4368.58
+    - 4368.33
+    - 4368.08
+    - 4367.83
+    - 4367.58
+    - 4367.33
+    - 4367.08
+    - 4366.83
+    - 4366.58
+    - 4366.33
+    - 4366.08
+    - 4365.83
+    - 4365.58
+    - 4365.33
+    - 4365.08
+    - 4364.83
+    - 4364.58
+    detectedMinRpm: 4364.58
+    detectedMaxRpm: 4492.33
+    detectedCylinders: 4
+    hasProfile: 1
+  exhaustUp:
+    enabled: 1
+    clip: {fileID: 8300000, guid: c686475b8e692da4ea4a29b36150b6d6, type: 3}
+    playheadRange: {x: 0.02, y: 0.98}
+    rpmAtRangeStart: 2436.1953
+    rpmAtRangeEnd: 5176.113
+    positionToRpm:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 1
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 1
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    useDetectedProfile: 1
+    gainDb: 0
+    pitchTrimCents: 0
+    stereoWidth: 1
+    forceMono: 0
+    detectedRpm:
+    - 2412.38
+    - 2422.6514
+    - 2429.499
+    - 2434.3904
+    - 2434.6404
+    - 2434.8904
+    - 2435.1404
+    - 2435.3904
+    - 2435.6404
+    - 2435.8904
+    - 2436.1404
+    - 2436.3904
+    - 2436.6404
+    - 2436.8904
+    - 2437.1404
+    - 2437.3904
+    - 2437.6404
+    - 2437.8904
+    - 2438.1404
+    - 2438.3904
+    - 2438.6404
+    - 2438.8904
+    - 2439.1404
+    - 2439.3904
+    - 2439.6404
+    - 2439.8904
+    - 2440.1404
+    - 2440.3904
+    - 2440.6404
+    - 2440.8904
+    - 2441.1404
+    - 2441.3904
+    - 2441.6404
+    - 2441.8904
+    - 2442.1404
+    - 2442.3904
+    - 2442.6404
+    - 2442.8904
+    - 2443.1404
+    - 2443.3904
+    - 2443.6404
+    - 2443.8904
+    - 2444.1404
+    - 2444.3904
+    - 2444.6404
+    - 2444.8904
+    - 2445.1404
+    - 2445.3904
+    - 2445.6404
+    - 2445.8904
+    - 2446.1404
+    - 2446.3904
+    - 2446.6404
+    - 2446.8904
+    - 2447.1404
+    - 2447.3904
+    - 2447.6404
+    - 2447.8904
+    - 2448.1404
+    - 2448.3904
+    - 2448.6404
+    - 2448.8904
+    - 2449.1404
+    - 2449.3904
+    - 2449.6404
+    - 2449.8904
+    - 2450.1404
+    - 2450.3904
+    - 2450.6404
+    - 2450.8904
+    - 2451.1404
+    - 2451.3904
+    - 2451.6404
+    - 2451.8904
+    - 2452.1404
+    - 2452.3904
+    - 2452.6404
+    - 2452.8904
+    - 2453.1404
+    - 2453.3904
+    - 2453.6404
+    - 2453.8904
+    - 2454.1404
+    - 2454.3904
+    - 2454.6404
+    - 2454.8904
+    - 2455.1404
+    - 2455.3904
+    - 2455.6404
+    - 2455.8904
+    - 2456.1404
+    - 2456.3904
+    - 2456.6404
+    - 2456.8904
+    - 2457.1404
+    - 2457.3904
+    - 2457.6404
+    - 2457.8904
+    - 2458.1404
+    - 2458.3904
+    - 2458.6404
+    - 2458.8904
+    - 2459.1404
+    - 2459.3904
+    - 2459.6404
+    - 2459.8904
+    - 2460.1404
+    - 2460.3904
+    - 2460.6404
+    - 2460.8904
+    - 2461.1404
+    - 2461.3904
+    - 2461.6404
+    - 2461.8904
+    - 2462.1404
+    - 2462.3904
+    - 2462.6404
+    - 2462.8904
+    - 2463.1404
+    - 2463.3904
+    - 2463.6404
+    - 2463.8904
+    - 2464.1404
+    - 2464.3904
+    - 2464.6404
+    - 2464.8904
+    - 2465.1404
+    - 2465.3904
+    - 2465.6404
+    - 2465.8904
+    - 2466.1404
+    - 2466.3904
+    - 2466.6404
+    - 2466.8904
+    - 2467.1404
+    - 2467.3904
+    - 2467.6404
+    - 2467.8904
+    - 2471.1965
+    - 2482.7668
+    - 2494.0203
+    - 2505.0737
+    - 2515.7039
+    - 2526.5715
+    - 2537.2637
+    - 2548.4841
+    - 2559.3794
+    - 2570.0684
+    - 2580.5227
+    - 2590.9045
+    - 2601.3406
+    - 2611.496
+    - 2621.6401
+    - 2632.4783
+    - 2643.2546
+    - 2655.0042
+    - 2666.4255
+    - 2677.9185
+    - 2689.4417
+    - 2701.03
+    - 2711.4988
+    - 2722.3484
+    - 2732.7195
+    - 2743.158
+    - 2753.0122
+    - 2763.0261
+    - 2773.0366
+    - 2783.4236
+    - 2793.8853
+    - 2804.6448
+    - 2815.9668
+    - 2827.9614
+    - 2839.5676
+    - 2851.3562
+    - 2863.9397
+    - 2875.6855
+    - 2887.7
+    - 2899.3704
+    - 2911.1548
+    - 2923.8904
+    - 2936.4453
+    - 2948.6316
+    - 2961.2039
+    - 2973.4797
+    - 2985.9858
+    - 2997.985
+    - 3009.1343
+    - 3019.7153
+    - 3029.7583
+    - 3039.7405
+    - 3048.8225
+    - 3057.334
+    - 3065.6328
+    - 3073.5222
+    - 3081.4773
+    - 3089.1135
+    - 3096.284
+    - 3103.3906
+    - 3110.6648
+    - 3118.135
+    - 3125.7837
+    - 3133.3008
+    - 3141.109
+    - 3149.5027
+    - 3158.4143
+    - 3167.5703
+    - 3177.5605
+    - 3187.8137
+    - 3198.6345
+    - 3210.2668
+    - 3221.6897
+    - 3233.7974
+    - 3246.2454
+    - 3257.394
+    - 3269.0344
+    - 3280.8684
+    - 3291.7146
+    - 3303.273
+    - 3314.4673
+    - 3325.002
+    - 3336.101
+    - 3348.0793
+    - 3360.0178
+    - 3372.1594
+    - 3384.645
+    - 3397.863
+    - 3411.3765
+    - 3425.563
+    - 3439.0112
+    - 3452.3362
+    - 3465.9146
+    - 3478.5964
+    - 3490.7502
+    - 3502.1697
+    - 3513.0999
+    - 3523.798
+    - 3534.4968
+    - 3544.5144
+    - 3555.2188
+    - 3565.5916
+    - 3576.4978
+    - 3586.6836
+    - 3597.108
+    - 3607.6196
+    - 3617.946
+    - 3628.0403
+    - 3638.6172
+    - 3649.7468
+    - 3660.9731
+    - 3672.3508
+    - 3684.3972
+    - 3697.5002
+    - 3710.3618
+    - 3722.547
+    - 3734.6406
+    - 3747.4702
+    - 3760.2734
+    - 3771.4634
+    - 3782.629
+    - 3793.6448
+    - 3804.6309
+    - 3814.4668
+    - 3824.0874
+    - 3833.4907
+    - 3843.6746
+    - 3853.6204
+    - 3862.7456
+    - 3871.9512
+    - 3881.8687
+    - 3891.4556
+    - 3900.3425
+    - 3908.56
+    - 3916.8442
+    - 3925.9114
+    - 3934.7512
+    - 3943.6072
+    - 3952.3196
+    - 3961.4998
+    - 3971.4673
+    - 3981.529
+    - 3991.6448
+    - 4001.3274
+    - 4010.8555
+    - 4021.0933
+    - 4030.884
+    - 4040.8965
+    - 4050.9692
+    - 4060.3313
+    - 4070.881
+    - 4081.9536
+    - 4092.838
+    - 4104.4624
+    - 4115.457
+    - 4126.8936
+    - 4138.7915
+    - 4150.919
+    - 4163.4946
+    - 4176.271
+    - 4188.3994
+    - 4201.152
+    - 4212.734
+    - 4224.7705
+    - 4236.3677
+    - 4247.4834
+    - 4258.0005
+    - 4268.997
+    - 4279.2505
+    - 4290.2227
+    - 4300.414
+    - 4310.437
+    - 4319.8213
+    - 4330.1147
+    - 4339.728
+    - 4349.6694
+    - 4359.7017
+    - 4370.79
+    - 4381.7334
+    - 4392.327
+    - 4402.4106
+    - 4413.1
+    - 4424.2646
+    - 4435.873
+    - 4447.939
+    - 4460.3096
+    - 4473.4106
+    - 4486.644
+    - 4499.8887
+    - 4512.223
+    - 4523.1206
+    - 4532.9487
+    - 4542.8135
+    - 4552.286
+    - 4561.566
+    - 4570.9595
+    - 4580.603
+    - 4591.605
+    - 4602.8975
+    - 4613.726
+    - 4625.242
+    - 4636.785
+    - 4648.0767
+    - 4659.995
+    - 4671.5347
+    - 4682.7007
+    - 4693.146
+    - 4703.268
+    - 4713.5146
+    - 4723.827
+    - 4733.7563
+    - 4742.9976
+    - 4752.164
+    - 4762.4854
+    - 4772.743
+    - 4783.2803
+    - 4793.7886
+    - 4803.747
+    - 4813.887
+    - 4823.6357
+    - 4832.863
+    - 4841.5054
+    - 4849.2183
+    - 4856.364
+    - 4863.925
+    - 4872.011
+    - 4880.6997
+    - 4889.442
+    - 4898.429
+    - 4907.5005
+    - 4916.9404
+    - 4926.3633
+    - 4936.073
+    - 4945.721
+    - 4955.4062
+    - 4965.7656
+    - 4977.098
+    - 4988.45
+    - 5000.5835
+    - 5012.0386
+    - 5023.6685
+    - 5035.7666
+    - 5047.6255
+    - 5058.8555
+    - 5070.298
+    - 5081.1655
+    - 5092.0444
+    - 5102.711
+    - 5113.043
+    - 5123.0107
+    - 5133.0903
+    - 5141.5596
+    - 5148.418
+    - 5148.668
+    - 5148.918
+    - 5149.168
+    - 5149.418
+    - 5149.668
+    - 5149.918
+    - 5150.168
+    - 5150.418
+    - 5150.668
+    - 5150.918
+    - 5151.168
+    - 5151.418
+    - 5151.668
+    - 5151.918
+    - 5152.168
+    - 5152.418
+    - 5152.668
+    - 5152.918
+    - 5153.168
+    - 5153.418
+    - 5153.668
+    - 5153.918
+    - 5154.168
+    - 5154.418
+    - 5154.668
+    - 5154.918
+    - 5155.168
+    - 5155.418
+    - 5155.668
+    - 5155.918
+    - 5156.168
+    - 5156.418
+    - 5156.668
+    - 5156.918
+    - 5157.168
+    - 5157.418
+    - 5157.668
+    - 5157.918
+    - 5158.168
+    - 5158.418
+    - 5158.668
+    - 5158.918
+    - 5159.168
+    - 5159.418
+    - 5159.668
+    - 5159.918
+    - 5160.168
+    - 5160.418
+    - 5160.668
+    - 5160.918
+    - 5161.168
+    - 5161.418
+    - 5161.668
+    - 5161.918
+    - 5162.168
+    - 5162.418
+    - 5162.668
+    - 5162.918
+    - 5163.168
+    - 5163.418
+    - 5163.668
+    - 5163.918
+    - 5164.168
+    - 5164.418
+    - 5164.668
+    - 5164.918
+    - 5165.168
+    - 5165.418
+    - 5165.668
+    - 5165.918
+    - 5166.168
+    - 5166.418
+    - 5166.668
+    - 5166.918
+    - 5167.168
+    - 5167.418
+    - 5167.668
+    - 5167.918
+    - 5168.168
+    - 5168.418
+    - 5168.668
+    - 5168.918
+    - 5169.168
+    - 5169.418
+    - 5169.668
+    - 5169.918
+    - 5170.168
+    - 5170.418
+    - 5170.668
+    - 5170.918
+    - 5171.168
+    - 5171.418
+    - 5171.668
+    - 5171.918
+    - 5172.168
+    - 5172.418
+    - 5172.668
+    - 5172.918
+    - 5173.168
+    - 5173.418
+    - 5173.668
+    - 5173.918
+    - 5174.168
+    - 5174.418
+    - 5174.668
+    - 5174.918
+    - 5175.168
+    - 5175.418
+    - 5175.668
+    - 5175.918
+    - 5176.168
+    - 5176.418
+    - 5176.668
+    - 5176.918
+    - 5177.168
+    - 5177.418
+    - 5177.668
+    - 5177.918
+    - 5178.168
+    - 5178.418
+    - 5178.668
+    detectedMinRpm: 2412.38
+    detectedMaxRpm: 5178.668
+    detectedCylinders: 4
+    hasProfile: 1
+  exhaustDown:
+    enabled: 1
+    clip: {fileID: 8300000, guid: 1a2c4f6faeca35a4aa3ab9f905d96629, type: 3}
+    playheadRange: {x: 0.02, y: 0.98}
+    rpmAtRangeStart: 1891.474
+    rpmAtRangeEnd: 419.38895
+    positionToRpm:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 1
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 1
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    useDetectedProfile: 1
+    gainDb: 0
+    pitchTrimCents: 0
+    stereoWidth: 1
+    forceMono: 0
+    detectedRpm:
+    - 1921.6744
+    - 1920.6101
+    - 1919.3433
+    - 1918.086
+    - 1914.8453
+    - 1911.8239
+    - 1908.8773
+    - 1905.3994
+    - 1901.3342
+    - 1897.0629
+    - 1892.4847
+    - 1887.8906
+    - 1883.333
+    - 1878.7916
+    - 1874.2174
+    - 1869.6328
+    - 1865.1389
+    - 1860.6716
+    - 1856.2067
+    - 1851.784
+    - 1847.4769
+    - 1843.2864
+    - 1838.9924
+    - 1834.5217
+    - 1830.0262
+    - 1825.2196
+    - 1819.9948
+    - 1814.3646
+    - 1808.2402
+    - 1802.0016
+    - 1795.7024
+    - 1789.0533
+    - 1782.3984
+    - 1775.8552
+    - 1769.3505
+    - 1762.9153
+    - 1756.2887
+    - 1749.6016
+    - 1742.9005
+    - 1736.0406
+    - 1728.8518
+    - 1721.4348
+    - 1714.0636
+    - 1706.8522
+    - 1699.6339
+    - 1692.4426
+    - 1685.4187
+    - 1678.866
+    - 1672.5812
+    - 1666.4392
+    - 1660.4607
+    - 1654.5992
+    - 1648.9397
+    - 1643.3379
+    - 1637.803
+    - 1632.5289
+    - 1627.3585
+    - 1622.2556
+    - 1617.3583
+    - 1612.4938
+    - 1607.6953
+    - 1602.8712
+    - 1597.7659
+    - 1592.5547
+    - 1587.2297
+    - 1581.8219
+    - 1576.412
+    - 1570.9968
+    - 1565.6165
+    - 1560.3378
+    - 1555.0947
+    - 1550.0304
+    - 1544.9023
+    - 1539.7158
+    - 1534.5979
+    - 1529.3912
+    - 1524.1036
+    - 1518.8976
+    - 1513.663
+    - 1508.4432
+    - 1503.4705
+    - 1498.5762
+    - 1493.7894
+    - 1489.2072
+    - 1484.5232
+    - 1479.692
+    - 1474.8243
+    - 1469.7607
+    - 1464.5469
+    - 1459.2081
+    - 1453.7836
+    - 1448.4542
+    - 1443.248
+    - 1438.1115
+    - 1432.982
+    - 1427.7903
+    - 1422.6407
+    - 1417.5735
+    - 1412.4508
+    - 1407.3444
+    - 1402.1888
+    - 1397.0206
+    - 1391.8993
+    - 1386.7323
+    - 1381.4385
+    - 1376.2546
+    - 1371.0541
+    - 1365.8356
+    - 1360.6204
+    - 1355.5471
+    - 1350.5637
+    - 1345.7455
+    - 1340.8359
+    - 1335.6786
+    - 1330.4628
+    - 1325.278
+    - 1320.14
+    - 1315.0078
+    - 1309.8796
+    - 1304.8761
+    - 1300.3201
+    - 1295.9739
+    - 1291.5881
+    - 1286.9601
+    - 1282.0547
+    - 1277.0421
+    - 1272.0068
+    - 1266.8112
+    - 1261.6211
+    - 1256.5696
+    - 1251.6886
+    - 1246.9639
+    - 1242.1395
+    - 1237.3137
+    - 1232.45
+    - 1227.6104
+    - 1222.8632
+    - 1218.1917
+    - 1213.6583
+    - 1209.3987
+    - 1204.9459
+    - 1200.3418
+    - 1195.6416
+    - 1190.8434
+    - 1186.0182
+    - 1181.1855
+    - 1176.2966
+    - 1171.5303
+    - 1166.92
+    - 1162.1396
+    - 1157.3959
+    - 1152.4027
+    - 1147.5282
+    - 1142.6339
+    - 1137.7064
+    - 1132.5878
+    - 1127.5927
+    - 1122.6184
+    - 1117.7461
+    - 1112.837
+    - 1107.9027
+    - 1102.9288
+    - 1097.9597
+    - 1092.9896
+    - 1087.882
+    - 1082.9467
+    - 1077.8148
+    - 1072.4515
+    - 1067.1796
+    - 1062.1475
+    - 1057.3127
+    - 1052.4144
+    - 1047.4441
+    - 1042.5663
+    - 1037.8126
+    - 1033.1058
+    - 1028.4286
+    - 1023.6376
+    - 1019.04504
+    - 1014.5347
+    - 1010.00714
+    - 1005.4149
+    - 1000.81165
+    - 996.08453
+    - 991.3461
+    - 986.54694
+    - 981.5627
+    - 976.4462
+    - 971.3416
+    - 966.12854
+    - 960.71515
+    - 954.62463
+    - 948.3304
+    - 941.8053
+    - 934.6743
+    - 927.3839
+    - 920.04156
+    - 912.60126
+    - 905.3322
+    - 897.91504
+    - 890.32294
+    - 882.9067
+    - 875.3538
+    - 867.57623
+    - 859.81573
+    - 852.0494
+    - 844.0336
+    - 836.12335
+    - 828.6292
+    - 820.82086
+    - 813.25085
+    - 806.00305
+    - 798.7254
+    - 791.3737
+    - 784.0243
+    - 776.0561
+    - 768.64996
+    - 760.84534
+    - 752.6286
+    - 744.58136
+    - 736.9747
+    - 729.0892
+    - 721.59344
+    - 714.1705
+    - 706.3141
+    - 698.8127
+    - 691.4127
+    - 683.39105
+    - 676.1795
+    - 668.4308
+    - 660.7808
+    - 653.4377
+    - 646.0933
+    - 638.51355
+    - 631.47675
+    - 623.9698
+    - 617.4074
+    - 610.61896
+    - 604.0973
+    - 596.95184
+    - 590.32465
+    - 583.3583
+    - 576.60803
+    - 569.4535
+    - 561.7093
+    - 553.5963
+    - 546.353
+    - 538.5514
+    - 530.7471
+    - 522.3947
+    - 514.73816
+    - 507.31332
+    - 500.09018
+    - 492.45074
+    - 485.9887
+    - 480.83395
+    - 480.58395
+    - 480.33395
+    - 480.08395
+    - 479.83395
+    - 479.58395
+    - 479.33395
+    - 479.08395
+    - 478.83395
+    - 478.58395
+    - 478.33395
+    - 478.08395
+    - 477.83395
+    - 477.58395
+    - 477.33395
+    - 477.08395
+    - 476.83395
+    - 476.58395
+    - 476.33395
+    - 476.08395
+    - 475.83395
+    - 475.58395
+    - 475.33395
+    - 475.08395
+    - 474.83395
+    - 474.58395
+    - 474.33395
+    - 474.08395
+    - 473.83395
+    - 473.58395
+    - 473.33395
+    - 473.08395
+    - 472.83395
+    - 472.58395
+    - 472.33395
+    - 472.08395
+    - 471.83395
+    - 471.58395
+    - 471.33395
+    - 471.08395
+    - 470.83395
+    - 470.58395
+    - 470.33395
+    - 470.08395
+    - 469.83395
+    - 469.58395
+    - 469.33395
+    - 469.08395
+    - 468.83395
+    - 468.58395
+    - 468.33395
+    - 468.08395
+    - 467.83395
+    - 467.58395
+    - 467.33395
+    - 467.08395
+    - 466.83395
+    - 466.58395
+    - 466.33395
+    - 466.08395
+    - 465.83395
+    - 465.58395
+    - 465.33395
+    - 465.08395
+    - 464.83395
+    - 464.58395
+    - 464.33395
+    - 464.08395
+    - 463.83395
+    - 463.58395
+    - 463.33395
+    - 463.08395
+    - 462.83395
+    - 462.58395
+    - 462.33395
+    - 462.08395
+    - 461.83395
+    - 461.58395
+    - 461.33395
+    - 461.08395
+    - 460.83395
+    - 460.58395
+    - 460.33395
+    - 460.08395
+    - 459.83395
+    - 459.58395
+    - 459.33395
+    - 459.08395
+    - 458.83395
+    - 458.58395
+    - 458.33395
+    - 458.08395
+    - 457.83395
+    - 457.58395
+    - 457.33395
+    - 457.08395
+    - 456.83395
+    - 456.58395
+    - 456.33395
+    - 456.08395
+    - 455.83395
+    - 455.58395
+    - 455.33395
+    - 455.08395
+    - 454.83395
+    - 454.58395
+    - 454.33395
+    - 454.08395
+    - 453.83395
+    - 453.58395
+    - 453.33395
+    - 453.08395
+    - 452.83395
+    - 452.58395
+    - 452.33395
+    - 452.08395
+    - 451.83395
+    - 451.58395
+    - 451.33395
+    - 451.08395
+    - 450.83395
+    - 450.58395
+    - 450.33395
+    - 450.08395
+    - 449.83395
+    - 449.58395
+    - 449.33395
+    - 449.08395
+    - 448.83395
+    - 448.58395
+    - 448.33395
+    - 448.08395
+    - 447.83395
+    - 447.58395
+    - 447.33395
+    - 447.08395
+    - 446.83395
+    - 446.58395
+    - 446.33395
+    - 446.08395
+    - 445.83395
+    - 445.58395
+    - 445.33395
+    - 445.08395
+    - 444.83395
+    - 444.58395
+    - 444.33395
+    - 444.08395
+    - 443.83395
+    - 443.58395
+    - 443.33395
+    - 443.08395
+    - 442.83395
+    - 442.58395
+    - 442.33395
+    - 442.08395
+    - 441.83395
+    - 441.58395
+    - 441.33395
+    - 441.08395
+    - 440.83395
+    - 440.58395
+    - 440.33395
+    - 440.08395
+    - 439.83395
+    - 439.58395
+    - 439.33395
+    - 439.08395
+    - 438.83395
+    - 438.58395
+    - 438.33395
+    - 438.08395
+    - 437.83395
+    - 437.58395
+    - 437.33395
+    - 437.08395
+    - 436.83395
+    - 436.58395
+    - 436.33395
+    - 436.08395
+    - 435.83395
+    - 435.58395
+    - 435.33395
+    - 435.08395
+    - 434.83395
+    - 434.58395
+    - 434.33395
+    - 434.08395
+    - 433.83395
+    - 433.58395
+    - 433.33395
+    - 433.08395
+    - 432.83395
+    - 432.58395
+    - 432.33395
+    - 432.08395
+    - 431.83395
+    - 431.58395
+    - 431.33395
+    - 431.08395
+    - 430.83395
+    - 430.58395
+    - 430.33395
+    - 430.08395
+    - 429.83395
+    - 429.58395
+    - 429.33395
+    - 429.08395
+    - 428.83395
+    - 428.58395
+    - 428.33395
+    - 428.08395
+    - 427.83395
+    - 427.58395
+    - 427.33395
+    - 427.08395
+    - 426.83395
+    - 426.58395
+    - 426.33395
+    - 426.08395
+    - 425.83395
+    - 425.58395
+    - 425.33395
+    - 425.08395
+    - 424.83395
+    - 424.58395
+    - 424.33395
+    - 424.08395
+    - 423.83395
+    - 423.58395
+    - 423.33395
+    - 423.08395
+    - 422.83395
+    - 422.58395
+    - 422.33395
+    - 422.08395
+    - 421.83395
+    - 421.58395
+    - 421.33395
+    - 421.08395
+    - 420.83395
+    - 420.58395
+    - 420.33395
+    - 420.08395
+    - 419.83395
+    - 419.58395
+    - 419.33395
+    - 419.08395
+    - 418.83395
+    - 418.58395
+    - 418.33395
+    - 418.08395
+    - 417.83395
+    - 417.58395
+    - 417.33395
+    - 417.08395
+    - 416.83395
+    detectedMinRpm: 416.83395
+    detectedMaxRpm: 1921.6744
+    detectedCylinders: 4
+    hasProfile: 1
+  rpm: 900
+  throttle: 0
+  load: 0
+  ignition: 1
+  rpmGroupEnabled: 1
+  rpmRange: {x: 400, y: 5200}
+  cylinders: 4
+  rpmDifferenceResampling: 1
+  maxResampleSemitones: 7
+  rpmSmoothMs: 8
+  rpmSnapDelta: 1200
+  rpmRateSmoothMs: 35
+  rpmRateReference: 4000
+  useThrottleForBlend: 0
+  accelBlendMs: 60
+  rpmRateThreshold: 600
+  grainRate: 150
+  grainRateRange: {x: 35, y: 420}
+  rateFollowsFiring: 0.85
+  rateFiringMultiplier: 1
+  grainSizeRange: {x: 16, y: 85}
+  sizeFollowsRpm: 0.7
+  sizeFollowsRpmRate: 0.3
+  overlapRange: {x: 2.5, y: 6}
+  timingJitter: 0.12
+  sizeJitter: 0.1
+  levelJitter: 0.08
+  positionJitterMs: 14
+  positionOffsetMs: 0
+  pitchJitterCents: 5
+  stereoSpread: 0.25
+  normaliseOverlap: 1
+  hermiteInterpolation: 1
+  maxGrains: 96
+  controlBlockSamples: 32
+  grainShape: 0
+  shapeParameter: 0.35
+  shapeSkew: 0
+  customShape:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.5
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  antiPhasing: 1
+  antiPhaseMaxCycles: 3
+  quantiseGrainLength: 1
+  layerDecorrelationMs: 14
+  listenerOverride: {fileID: 0}
+  directionalAmount: 1
+  minSideLevel: 0.12
+  directionalSharpness: 1.4
+  bothLayerLevel: 0.35
+  engineLevel: 1
+  exhaustLevel: 1
+  overrideDirection: 0
+  directionOverride: 1
+  dcBlock: 1
+  highpassEnabled: 1
+  highpassHz: 45
+  highpassQ: 0.707
+  lowpassEnabled: 1
+  lowpassHz: 11000
+  lowpassQ: 0.707
+  notchEnabled: 0
+  notchHz: 3000
+  notchQ: 6
+  gateEnabled: 1
+  gateThresholdDb: -52
+  gateRangeDb: 12
+  gateAttackMs: 3
+  gateReleaseMs: 120
+  gateHoldMs: 40
+  masterVolume: 0.75
+  softClip: 1
+  modulation: []
+  lfo1:
+    shape: 0
+    rateHz: 5
+    syncToFiringFrequency: 0
+    firingMultiplier: 0.5
+  lfo2:
+    shape: 6
+    rateHz: 1.7
+    syncToFiringFrequency: 0
+    firingMultiplier: 0.5
+  previewInEditMode: 0
+  previewSweep: 0
+  previewSweepSeconds: 6
+--- !u!82 &678290359
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 678290356}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 0
+  MinDistance: 3
+  MaxDistance: 60
+  Pan2D: 0
+  rolloffMode: 1
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.06944445
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!4 &678290360
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 678290356}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1428210996}
+  - {fileID: 1960884767}
+  - {fileID: 274472090}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1428210995
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1428210996}
+  - component: {fileID: 1428210999}
+  - component: {fileID: 1428210998}
+  - component: {fileID: 1428210997}
+  m_Layer: 0
+  m_Name: Body
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1428210996
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1428210995}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.6, z: 0}
+  m_LocalScale: {x: 1.8, y: 0.9, z: 4.2}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 678290360}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!23 &1428210997
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1428210995}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 6cb895c737294bc44bd8d208c87143bf, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 1
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_MaskInteraction: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1428210998
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1428210995}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!33 &1428210999
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1428210995}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1658815103
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1658815105}
+  - component: {fileID: 1658815104}
+  m_Layer: 0
+  m_Name: Directional Light
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!108 &1658815104
+Light:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1658815103}
+  m_Enabled: 1
+  serializedVersion: 13
+  m_Type: 1
+  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
+  m_Intensity: 1
+  m_Range: 10
+  m_SpotAngle: 30
+  m_InnerSpotAngle: 21.80208
+  m_CookieSize2D: {x: 0.5, y: 0.5}
+  m_Shadows:
+    m_Type: 2
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+    m_CullingMatrixOverride:
+      e00: 1
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    m_UseCullingMatrixOverride: 0
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingLayerMask: 1
+  m_Lightmapping: 4
+  m_LightShadowCasterMode: 0
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 1
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_UseBoundingSphereOverride: 0
+  m_UseViewFrustumForShadowCasterCull: 1
+  m_ForceVisible: 0
+  m_ShapeRadius: 0.025
+  m_ShadowAngle: 0
+  m_LightUnit: 1
+  m_LuxAtDistance: 1
+  m_EnableSpotReflector: 1
+--- !u!4 &1658815105
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1658815103}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.38791165, y: 0.27470842, z: -0.12230807, w: 0.8712638}
+  m_LocalPosition: {x: 0, y: 3, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &1960884766
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1960884767}
+  - component: {fileID: 1960884770}
+  - component: {fileID: 1960884769}
+  - component: {fileID: 1960884768}
+  m_Layer: 0
+  m_Name: Nose (engine side, +Z)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1960884767
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1960884766}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.75, z: 2.1}
+  m_LocalScale: {x: 1.4, y: 0.5, z: 0.5}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 678290360}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!23 &1960884768
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1960884766}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: ef2f70d0bf56ef24389aa48dcac8402d, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 1
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_MaskInteraction: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1960884769
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1960884766}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!33 &1960884770
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1960884766}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1660057539 &9223372036854775807
+SceneRoots:
+  m_ObjectHideFlags: 0
+  m_Roots:
+  - {fileID: 320791668}
+  - {fileID: 1658815105}
+  - {fileID: 311946340}
+  - {fileID: 678290360}
