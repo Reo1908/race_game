@@ -1,0 +1,280 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!181963792 &2655988077585873504
+Preset:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Works1
+  m_TargetType:
+    m_NativeTypeID: 114
+    m_ManagedTypePPtr: {fileID: 11500000, guid: 7d5686ade6fd60d41881c39e2cc369d9, type: 3}
+    m_ManagedTypeFallback: 
+  m_Properties:
+  - target: {fileID: 0}
+    propertyPath: m_Enabled
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_EditorHideFlags
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_EditorClassIdentifier
+    value: Assembly-CSharp::GranularEngineAudio
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: revUpClip
+    value: 
+    objectReference: {fileID: 8300000, guid: c686475b8e692da4ea4a29b36150b6d6, type: 3}
+  - target: {fileID: 0}
+    propertyPath: revDownClip
+    value: 
+    objectReference: {fileID: 8300000, guid: 1a2c4f6faeca35a4aa3ab9f905d96629, type: 3}
+  - target: {fileID: 0}
+    propertyPath: revUpPosAtIdle
+    value: 0.022
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: revUpPosAtRedline
+    value: 0.92
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: revDownPosAtIdle
+    value: 0.517
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: revDownPosAtRedline
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: exhaustRevUpClip
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: exhaustRevDownClip
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: exhaustRevUpPosAtIdle
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: exhaustRevUpPosAtRedline
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: exhaustRevDownPosAtIdle
+    value: 0.502
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: exhaustRevDownPosAtRedline
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: cameraViewBlend
+    value: 0.425
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: minSourceMix
+    value: 0.2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: rpmNormalized
+    value: 0.917
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: load
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: useThrottleBasedMix
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: throttlePosition
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: cdiIgnitionMultiplier
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: manualAccelerationControl
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: acceleratingOverride
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: autoDetectSensitivity
+    value: 0.05
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: crossfadeSeconds
+    value: 0.25
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: adaptCrossfadeToRpm
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: crossfadeSecondsWhenSteady
+    value: 0.25
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: crossfadeRateMulWhenChangingFast
+    value: 0.5
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: rpmRateSmoothing
+    value: 6
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: grainSizeSeconds
+    value: 0.216
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: adaptGrainToRpmRate
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: grainSizeWhenSteady
+    value: 0.22
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: grainSizeWhenChangingFast
+    value: 0.116
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: grainRateMulWhenSteady
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: grainRateMulWhenChangingFast
+    value: 1.854
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: rpmRateForMaxGrainAdapt
+    value: 1.2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: maxOverlapGrains
+    value: 9
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: minGrainRate
+    value: 60
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: maxGrainRate
+    value: 260
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: fineTunePitchRange.x
+    value: 0.95
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: fineTunePitchRange.y
+    value: 1.05
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: pitchJitter
+    value: 0.01
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: pitchWanderStep
+    value: 0.01
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: grainPitchDriftMax
+    value: 0.06
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: rpmRateForMaxDrift
+    value: 1.5
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: positionJitterFraction
+    value: 0.4
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: useCycleAlignedJitter
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: spawnTimingJitter
+    value: 0.04
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: grainLengthJitter
+    value: 0.0166
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: grainAmplitudeJitter
+    value: 0.0148
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: stereoSpread
+    value: 0.034
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: panWanderStep
+    value: 0.0049
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: panLocalJitter
+    value: 0.012
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: masterGain
+    value: 1.723
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: normalizeForOverlap
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: softClipOutput
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: denoiseLowpassEnabled
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: denoiseLowpassCutoffHz
+    value: 1818
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: denoiseGateEnabled
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: denoiseGateThresholdLow
+    value: 0.01
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: denoiseGateThresholdHigh
+    value: 0.0582
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: denoiseGateFloor
+    value: 0.354
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: denoiseGateAttackSeconds
+    value: 0.0598
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: denoiseGateReleaseSeconds
+    value: 0.174
+    objectReference: {fileID: 0}
+  m_ExcludedProperties: []
+  m_CoupledType:
+    m_NativeTypeID: 0
+    m_ManagedTypePPtr: {fileID: 0}
+    m_ManagedTypeFallback: 
+  m_CoupledProperties: []
