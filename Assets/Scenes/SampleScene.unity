@@ -9842,12 +9842,13 @@ GameObject:
   - component: {fileID: 2008266025}
   - component: {fileID: 2008266026}
   - component: {fileID: 2008266028}
-  - component: {fileID: 2008266029}
   - component: {fileID: 2008266030}
   - component: {fileID: 2008266031}
   - component: {fileID: 2008266032}
   - component: {fileID: 2008266033}
   - component: {fileID: 2008266034}
+  - component: {fileID: 2008266036}
+  - component: {fileID: 2008266035}
   m_Layer: 10
   m_Name: CarController
   m_TagString: Untagged
@@ -9951,11 +9952,11 @@ MonoBehaviour:
   _data:
     _json: '{"declarations":{"Kind":"Object","collection":{"$content":[{"name":"Drivetrain","value":{"$content":0,"$type":"System.Int32"},"typeHandle":{"Identification":"System.Int32,
       mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089","$version":"A"},"$version":"A"},{"name":"GripCurve","value":{"keys":[{"time":0.0,"value":1.0,"tangentMode":0,"inTangent":0.0,"outTangent":0.0},{"time":4.0,"value":1.0,"tangentMode":0,"inTangent":0.0,"outTangent":0.0},{"time":8.0,"value":0.0,"tangentMode":1,"inTangent":-0.6569455,"outTangent":0.0},{"time":180.0,"value":0.0,"tangentMode":0,"inTangent":0.0,"outTangent":0.0}],"preWrapMode":"ClampForever","postWrapMode":"ClampForever","$type":"UnityEngine.AnimationCurve"},"typeHandle":{"Identification":"UnityEngine.AnimationCurve,
-      UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null","$version":"A"},"$version":"A"},{"name":"Grip","value":{"$content":6.0,"$type":"System.Single"},"typeHandle":{"Identification":"System.Single,
-      mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089","$version":"A"},"$version":"A"},{"name":"DriftGrip","value":{"$content":5.0,"$type":"System.Single"},"typeHandle":{"Identification":"System.Single,
-      mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089","$version":"A"},"$version":"A"},{"name":"RearGrip","value":{"$content":0.5,"$type":"System.Single"},"typeHandle":{"Identification":"System.Single,
-      mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089","$version":"A"},"$version":"A"},{"name":"TurnRate","value":{"$content":2.3,"$type":"System.Single"},"typeHandle":{"Identification":"System.Single,
-      mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089","$version":"A"},"$version":"A"},{"name":"Stability","value":{"$content":1.7,"$type":"System.Single"},"typeHandle":{"Identification":"System.Single,
+      UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null","$version":"A"},"$version":"A"},{"name":"Grip","value":{"$content":7.0,"$type":"System.Single"},"typeHandle":{"Identification":"System.Single,
+      mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089","$version":"A"},"$version":"A"},{"name":"RearGrip","value":{"$content":0.7,"$type":"System.Single"},"typeHandle":{"Identification":"System.Single,
+      mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089","$version":"A"},"$version":"A"},{"name":"DriftGrip","value":{"$content":5.5,"$type":"System.Single"},"typeHandle":{"Identification":"System.Single,
+      mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089","$version":"A"},"$version":"A"},{"name":"TurnRate","value":{"$content":2.5,"$type":"System.Single"},"typeHandle":{"Identification":"System.Single,
+      mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089","$version":"A"},"$version":"A"},{"name":"Stability","value":{"$content":2.0,"$type":"System.Single"},"typeHandle":{"Identification":"System.Single,
       mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089","$version":"A"},"$version":"A"},{"name":"DriftInstability","value":{"$content":1.7,"$type":"System.Single"},"typeHandle":{"Identification":"System.Single,
       mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089","$version":"A"},"$version":"A"},{"name":"ThrottleSteeringMultiplier","value":{"$content":1.0,"$type":"System.Single"},"typeHandle":{"Identification":"System.Single,
       mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089","$version":"A"},"$version":"A"},{"name":"NoThrottleRecovery","value":{"$content":0.5,"$type":"System.Single"},"typeHandle":{"Identification":"System.Single,
@@ -10235,103 +10236,6 @@ MonoBehaviour:
   m_DefaultActionMap: 
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!82 &2008266029
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2008266010}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: 0b1b464c6838b334d9197d924413a828, type: 3}
-  m_PlayOnAwake: 1
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 1
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
 --- !u!114 &2008266030
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10383,7 +10287,7 @@ MonoBehaviour:
   handbrakeAction: {fileID: -2099379676528639254, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   brakeRearBalance: 0.9
   brakeTorque: 10
-  handbrakeTorque: 10
+  handbrakeTorque: 2
   handbrakeSmoothSpeed: 5
 --- !u!114 &2008266032
 MonoBehaviour:
@@ -10602,7 +10506,7 @@ MonoBehaviour:
   engineChangeRate: 12000
   engineResponse: 2200
   engineEngineBraking: 45
-  engineFriction: 0.1
+  engineFriction: 3
   engineInertia: 10
   clutchHardness: 25
   driveForceMultiplier: 0.1
@@ -10700,9 +10604,180 @@ MonoBehaviour:
   drivetrainChatterFrequency: 15
   enableDownshiftBlip: 1
   showDebugOverlay: 1
-  debugAudioSource: {fileID: 2008266029}
+  debugAudioSource: {fileID: 0}
   debugMinPitch: 0
   debugMaxPitch: 1
+--- !u!114 &2008266035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2008266010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d5686ade6fd60d41881c39e2cc369d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GranularEngineAudio
+  revUpClip: {fileID: 8300000, guid: 72fe2da98fe67eb46a6da28469e78881, type: 3}
+  revDownClip: {fileID: 8300000, guid: 0a5ebb371859af04e8e4c093268c3124, type: 3}
+  revUpPosAtIdle: 0.022
+  revUpPosAtRedline: 0.92
+  revDownPosAtIdle: 0.477
+  revDownPosAtRedline: 0
+  exhaustRevUpClip: {fileID: 8300000, guid: c686475b8e692da4ea4a29b36150b6d6, type: 3}
+  exhaustRevDownClip: {fileID: 8300000, guid: 1a2c4f6faeca35a4aa3ab9f905d96629, type: 3}
+  exhaustRevUpPosAtIdle: 0.022
+  exhaustRevUpPosAtRedline: 0.886
+  exhaustRevDownPosAtIdle: 0.566
+  exhaustRevDownPosAtRedline: 0
+  cameraViewBlend: 0.926
+  minSourceMix: 0.042
+  engineSource: {fileID: 0}
+  rpmNormalized: 0.917
+  load: 0.222
+  useThrottleBasedMix: 1
+  throttlePosition: 1
+  cdiIgnitionMultiplier: 1
+  manualAccelerationControl: 0
+  acceleratingOverride: 0
+  autoDetectSensitivity: 0.05
+  crossfadeSeconds: 0.25
+  adaptCrossfadeToRpm: 1
+  crossfadeSecondsWhenSteady: 0.25
+  crossfadeRateMulWhenChangingFast: 0.5
+  rpmRateSmoothing: 0.5
+  grainSizeSeconds: 0.095
+  adaptGrainToRpmRate: 1
+  grainSizeWhenSteady: 0.22
+  grainSizeWhenChangingFast: 0.116
+  grainRateMulWhenSteady: 1
+  grainRateMulWhenChangingFast: 1.854
+  rpmRateForMaxGrainAdapt: 1.2
+  maxOverlapGrains: 9
+  minGrainRate: 60
+  maxGrainRate: 260
+  fineTunePitchRange: {x: 0.95, y: 1.05}
+  pitchJitter: 0.01
+  pitchWanderStep: 0.01
+  grainPitchDriftMax: 0.2
+  rpmRateForMaxDrift: 1.5
+  positionJitterFraction: 0.4
+  useCycleAlignedJitter: 1
+  spawnTimingJitter: 0.04
+  grainLengthJitter: 0.0166
+  grainAmplitudeJitter: 0.0148
+  stereoSpread: 0.034
+  panWanderStep: 0.0049
+  panLocalJitter: 0.012
+  masterGain: 2
+  normalizeForOverlap: 1
+  softClipOutput: 1
+  denoiseLowpassEnabled: 1
+  denoiseLowpassCutoffHz: 2578
+  denoiseGateEnabled: 1
+  denoiseGateThresholdLow: 0.0252
+  denoiseGateThresholdHigh: 0.0582
+  denoiseGateFloor: 0.354
+  denoiseGateAttackSeconds: 0.0598
+  denoiseGateReleaseSeconds: 0.174
+--- !u!82 &2008266036
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2008266010}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &2030683113
 PrefabInstance:
   m_ObjectHideFlags: 0

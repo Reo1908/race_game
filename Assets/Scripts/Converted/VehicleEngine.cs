@@ -74,8 +74,14 @@ public class VehicleEngine : MonoBehaviour
     public float EngineOutput { get; private set; }
     public float CurrentRPM { get; private set; }
 
-    /// <summary>RPM the rev limiter cuts at. Read-only for HUD/UI.</summary>
-    public float EngineRedline { get { return engineRedline; } }
+    /// <summary>0-1 raw throttle pedal input, read this frame (before the ignition/rev-limiter cut is applied).</summary>
+    public float Throttle { get; private set; }
+    /// <summary>0-1. CurrentRPM / EngineRedline, after this frame's RPM update — for anything (e.g. audio) that wants the freshest value rather than last frame's.</summary>
+    public float RpmNormalized { get; private set; }
+    /// <summary>False while the rev limiter has cut ignition (RPM at/above redline) or the gearbox itself has ignition off.</summary>
+    public bool IgnitionOn { get; private set; }
+    /// <summary>True while the downshift blip is actively holding RPM up during a disconnected downshift (see EnableDownshiftBlip).</summary>
+    public bool IsBlipping { get; private set; }
 
     private Rigidbody rb;
     private VehicleSuspension suspension;
@@ -184,6 +190,9 @@ public class VehicleEngine : MonoBehaviour
             : 0f;
         float effectiveThrottle = ignitionOn ? throttle : 0f;
 
+        Throttle = throttle;
+        IgnitionOn = ignitionOn;
+
         // ---- Optional downshift blip ----
         if (enableDownshiftBlip)
         {
@@ -193,6 +202,7 @@ public class VehicleEngine : MonoBehaviour
                 pendingDownshiftBlip = false;
         }
         previousGearRatio = currentGearRatio;
+        IsBlipping = enableDownshiftBlip && pendingDownshiftBlip;
 
         // ---- Free-rev vs. drivetrain-coupled RPM ----
         // Torque curve sampled off last frame's RPM, since this frame's new RPM is what
@@ -237,6 +247,7 @@ public class VehicleEngine : MonoBehaviour
         }
 
         CurrentRPM = Mathf.Clamp(newRPM, 0f, engineRedline);
+        RpmNormalized = Mathf.Clamp01(CurrentRPM / engineRedline);
 
         // ---- Torque -> DriveForce ----
         // normalizedRPM/torqueMultiplier/driveTorque already computed above for the

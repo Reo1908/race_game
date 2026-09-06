@@ -47,6 +47,8 @@ public class GranularEngineAudio : MonoBehaviour
     private float currentExhaustGain = 1f;
 
     [Header("Engine State (drive these from your car controller)")]
+    [Tooltip("Optional. If set, rpmNormalized, load/throttlePosition, and cdiIgnitionMultiplier below are pulled from this every frame instead of needing to be driven manually. Leave empty to keep setting the fields below yourself.")]
+    public VehicleEngine engineSource;
     [Range(0f, 1f)] public float rpmNormalized = 0f;
     [Range(0f, 1f)] public float load = 0f; // throttle/load: affects grain density
 
@@ -233,6 +235,9 @@ public class GranularEngineAudio : MonoBehaviour
 
     void Start()
     {
+        if (engineSource == null) engineSource = GetComponent<VehicleEngine>();
+        if (engineSource != null) useThrottleBasedMix = true; // a real throttle signal is available now, so use it instead of RPM-rate auto-detection
+
         mixSampleRate = AudioSettings.outputSampleRate;
         revUp = LoadClip(revUpClip);
         revDown = revDownClip != null ? LoadClip(revDownClip) : revUp;
@@ -374,6 +379,29 @@ public class GranularEngineAudio : MonoBehaviour
 
     void Update()
     {
+        if (engineSource != null)
+        {
+            rpmNormalized = engineSource.RpmNormalized;
+            load = engineSource.Throttle;
+            throttlePosition = engineSource.Throttle;
+            // Same trick the tooltip on cdiIgnitionMultiplier already describes:
+            // dropping it to 0 forces rev-down grains without touching throttle itself.
+            cdiIgnitionMultiplier = engineSource.IgnitionOn ? 1f : 0f;
+
+            // Downshift blip: the engine's real throttle is 0 here (foot off the pedal
+            // mid-shift), but VehicleEngine is deliberately holding/pushing RPM up to
+            // match the new gear. Without this override, useThrottleBasedMix would read
+            // throttlePosition = 0 and pick rev-down grains for a phase that should
+            // sound like a rev-up blip. Force the clip-selection signals up for as long
+            // as the blip is active; everything else (grain size/rate, pitch drift) is
+            // already driven off rpmNormalized's rate of change, so it reacts on its own.
+            if (engineSource.IsBlipping)
+            {
+                throttlePosition = 1f;
+                load = Mathf.Max(load, 1f);
+            }
+        }
+
         // Track the raw rate unconditionally (used to auto-drive grain pitch
         // drift below) even when manualAccelerationControl overrides clip
         // selection itself — the two are independent concerns.
