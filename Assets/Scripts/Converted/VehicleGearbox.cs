@@ -37,6 +37,9 @@ public class VehicleGearbox : MonoBehaviour
     public float CurrentGearRatio { get; private set; }
     public int DrivetrainDirection { get; private set; }
 
+    /// <summary>0 = reverse, 1 = 1st, 2 = 2nd, and so on. Read-only for HUD/UI.</summary>
+    public int CurrentGear { get { return currentGear; } }
+
     // currentGear: 0 = reverse, 1 = 1st gear, 2 = 2nd, etc. — matches the original index convention.
     private int currentGear;
     private int gearCount; // reverse + all forward gears
