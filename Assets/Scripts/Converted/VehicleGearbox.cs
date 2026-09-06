@@ -49,6 +49,11 @@ public class VehicleGearbox : MonoBehaviour
     {
         currentGear = 1;
         gearCount = gearRatios.Count + 1; // +1 for reverse, which isn't in the list anymore
+        // Ignition/Clutch previously only ever got set inside ShiftRoutine, so before the
+        // first shift they sat at C#'s default 0 — engine unconnected and unable to make
+        // torque from the very first frame. Start "not mid-shift" instead.
+        Ignition = 1;
+        Clutch = 1;
     }
 
     private void OnEnable()

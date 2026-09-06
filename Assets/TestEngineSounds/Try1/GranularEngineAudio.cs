@@ -15,36 +15,18 @@ public class GranularEngineAudio : MonoBehaviour
     [Header("Source Clips")]
     [Tooltip("Recording of the engine revving up from idle to redline (or as far as you captured).")]
     public AudioClip revUpClip;
+    [Tooltip("Gain applied to grains read from the rev-up clip.")]
+    [Range(0f, 2f)] public float revUpGain = 1f;
     [Tooltip("Recording of the engine coasting back down from high RPM to idle. If left empty, revUpClip is reused (read backwards).")]
     public AudioClip revDownClip;
+    [Tooltip("Gain applied to grains read from the rev-down clip.")]
+    [Range(0f, 2f)] public float revDownGain = 1f;
 
     [Header("RPM -> clip position mapping (engine)")]
-    [Tooltip("Position (0-1, fraction of clip length) that corresponds to rpmNormalized = 0 on the rev-up clip.")]
-    [Range(0f, 1f)] public float revUpPosAtIdle = 0f;
-    [Tooltip("Position (0-1) that corresponds to rpmNormalized = 1 on the rev-up clip.")]
-    [Range(0f, 1f)] public float revUpPosAtRedline = 1f;
-    [Tooltip("Position (0-1) that corresponds to rpmNormalized = 0 on the rev-down clip.")]
-    [Range(0f, 1f)] public float revDownPosAtIdle = 1f;
-    [Tooltip("Position (0-1) that corresponds to rpmNormalized = 1 on the rev-down clip.")]
-    [Range(0f, 1f)] public float revDownPosAtRedline = 0f;
-
-    [Header("Exhaust Source (optional second granular voice)")]
-    [Tooltip("Recording of the exhaust revving up from idle to redline. Leave empty to disable the exhaust voice entirely (engine-only, same as before).")]
-    public AudioClip exhaustRevUpClip;
-    [Tooltip("Recording of the exhaust coasting back down from high RPM to idle. If left empty while exhaustRevUpClip is set, exhaustRevUpClip is reused (read backwards), same convention as the engine clips above.")]
-    public AudioClip exhaustRevDownClip;
-    [Range(0f, 1f)] public float exhaustRevUpPosAtIdle = 0f;
-    [Range(0f, 1f)] public float exhaustRevUpPosAtRedline = 1f;
-    [Range(0f, 1f)] public float exhaustRevDownPosAtIdle = 1f;
-    [Range(0f, 1f)] public float exhaustRevDownPosAtRedline = 0f;
-
-    [Header("Engine / Exhaust View Mix")]
-    [Tooltip("0 = camera fully at the front (engine bay dominant), 1 = camera fully at the rear (exhaust dominant). Drive this from your camera rig, e.g. from the dot product of camera-forward and car-forward.")]
-    [Range(0f, 1f)] public float cameraViewBlend = 0.5f;
-    [Tooltip("Gain floor for whichever source is 'losing' at the current camera angle, so it's never fully inaudible even at the extreme front or rear view. 0.15-0.3 keeps a believable presence without washing out the dominant source.")]
-    [Range(0f, 0.5f)] public float minSourceMix = 0.2f;
-    private float currentEngineGain = 1f;
-    private float currentExhaustGain = 1f;
+    [Tooltip("Maps rpmNormalized (0-1, X axis) to a read position in the rev-up clip (0-1, Y axis = fraction of clip length). Edit the curve to shape how the playhead moves through the recording as RPM rises.")]
+    public AnimationCurve revUpPositionCurve = AnimationCurve.Linear(0f, 0f, 1f, 1f);
+    [Tooltip("Maps rpmNormalized (0-1, X axis) to a read position in the rev-down clip (0-1, Y axis = fraction of clip length). Edit the curve to shape how the playhead moves through the recording as RPM falls.")]
+    public AnimationCurve revDownPositionCurve = AnimationCurve.Linear(0f, 1f, 1f, 0f);
 
     [Header("Engine State (drive these from your car controller)")]
     [Tooltip("Optional. If set, rpmNormalized, load/throttlePosition, and cdiIgnitionMultiplier below are pulled from this every frame instead of needing to be driven manually. Leave empty to keep setting the fields below yourself.")]
@@ -59,10 +41,6 @@ public class GranularEngineAudio : MonoBehaviour
     [Range(0f, 1f)] public float throttlePosition = 0f;
     [Tooltip("Multiplies throttlePosition before it's used for clip selection. Drop this toward 0 to force rev-down grains — e.g. for a rev-limiter/ignition-cut effect — without touching the actual throttle value.")]
     [Range(0f, 1f)] public float cdiIgnitionMultiplier = 1f;
-    [Tooltip("If off, acceleration state is detected automatically from the change in rpmNormalized over time.")]
-    public bool manualAccelerationControl = false;
-    [Tooltip("Only used when manualAccelerationControl is on.")]
-    public bool acceleratingOverride = true;
     [Tooltip("How fast rpmNormalized must be rising/falling per second before auto-detection commits to a direction. Prevents flicker near-constant RPM.")]
     public float autoDetectSensitivity = 0.05f;
     [Tooltip("How long (seconds) it takes clip selection to fully cross over from rev-down to rev-up (or back) after the detected direction flips. Grains are chosen probabilistically during that window — same mechanism as the throttle-based mix above — so it fades rather than snapping instantly on the frame the direction changes. Used directly only when adaptCrossfadeToRpm is off.")]
@@ -188,15 +166,11 @@ public class GranularEngineAudio : MonoBehaviour
     }
     private ClipData revUp;
     private ClipData revDown;
-    private ClipData exhaustRevUp;
-    private ClipData exhaustRevDown;
-    private bool exhaustEnabled;
     private int mixSampleRate;
 
     private struct Grain
     {
         public bool useRevUp;
-        public bool isExhaust;
         public double readPos;
         public double playbackRate;
         public int lengthSamples;
@@ -231,23 +205,20 @@ public class GranularEngineAudio : MonoBehaviour
     public float CurrentRpmRate => rpmRateSmoothed;
     public float CurrentMixBlend => mixBlend;
     /// Roughly how many grains overlap at once. Below ~2-3 it will sound gappy/robotic.
-    public float ApproxOverlap => CurrentGrainRate * lastEffectiveGrainSize * (exhaustEnabled ? 2f : 1f);
+    public float ApproxOverlap => CurrentGrainRate * lastEffectiveGrainSize;
 
     void Start()
     {
+        // Fallback: if no VehicleEngine is present (e.g. testing this component
+        // in isolation), engineSource stays null and Update() below simply skips
+        // pulling from it — rpmNormalized/load/throttlePosition/cdiIgnitionMultiplier
+        // are then driven entirely by the inspector sliders instead, no errors.
         if (engineSource == null) engineSource = GetComponent<VehicleEngine>();
         if (engineSource != null) useThrottleBasedMix = true; // a real throttle signal is available now, so use it instead of RPM-rate auto-detection
 
         mixSampleRate = AudioSettings.outputSampleRate;
         revUp = LoadClip(revUpClip);
         revDown = revDownClip != null ? LoadClip(revDownClip) : revUp;
-
-        exhaustEnabled = exhaustRevUpClip != null;
-        if (exhaustEnabled)
-        {
-            exhaustRevUp = LoadClip(exhaustRevUpClip);
-            exhaustRevDown = exhaustRevDownClip != null ? LoadClip(exhaustRevDownClip) : exhaustRevUp;
-        }
 
         previousRpm = rpmNormalized;
         currentPitchMul = (fineTunePitchRange.x + fineTunePitchRange.y) * 0.5f;
@@ -403,8 +374,7 @@ public class GranularEngineAudio : MonoBehaviour
         }
 
         // Track the raw rate unconditionally (used to auto-drive grain pitch
-        // drift below) even when manualAccelerationControl overrides clip
-        // selection itself — the two are independent concerns.
+        // drift below).
         float delta = (rpmNormalized - previousRpm) / Mathf.Max(Time.deltaTime, 0.0001f);
         float rateAlpha = 1f - Mathf.Exp(-rpmRateSmoothing * Time.deltaTime);
         // Two cascaded one-pole passes instead of one. A single pass only rolls
@@ -421,16 +391,9 @@ public class GranularEngineAudio : MonoBehaviour
         rpmRateSmoothed = Mathf.Lerp(rpmRateSmoothed, rpmRateStage1, rateAlpha);
         previousRpm = rpmNormalized;
 
-        if (!manualAccelerationControl)
-        {
-            if (delta > autoDetectSensitivity) accelerating = true;
-            else if (delta < -autoDetectSensitivity) accelerating = false;
-            // else: keep previous state (avoids flicker when RPM is roughly flat)
-        }
-        else
-        {
-            accelerating = acceleratingOverride;
-        }
+        if (delta > autoDetectSensitivity) accelerating = true;
+        else if (delta < -autoDetectSensitivity) accelerating = false;
+        // else: keep previous state (avoids flicker when RPM is roughly flat)
 
         // Ease mixBlend toward accelerating's target over the (optionally adaptive)
         // crossfade duration instead of snapping the instant the direction flips —
@@ -452,12 +415,6 @@ public class GranularEngineAudio : MonoBehaviour
         }
         float mixTarget = accelerating ? 1f : 0f;
         mixBlend = Mathf.MoveTowards(mixBlend, mixTarget, Time.deltaTime / Mathf.Max(0.02f, effectiveCrossfadeSeconds));
-
-        // Engine/exhaust view mix: a straight lerp between cameraViewBlend's two
-        // extremes, clamped so neither source ever drops below minSourceMix —
-        // both stay audible no matter how far front/rear the camera sits.
-        currentEngineGain = Mathf.Lerp(1f, minSourceMix, cameraViewBlend);
-        currentExhaustGain = Mathf.Lerp(minSourceMix, 1f, cameraViewBlend);
 
         // Advance the one shared pitch trajectory every grain reads its start
         // from. grainPitchDriftMax/rpmRateForMaxDrift set how hard it leans
@@ -487,8 +444,7 @@ public class GranularEngineAudio : MonoBehaviour
     // based on how fast RPM is currently changing rather than the RPM value
     // itself — a held RPM (even at redline) needs no special treatment, but a
     // fast rev or lift-off does, wherever it happens in the rev range. Called
-    // once per OnAudioFilterRead so both the engine and exhaust grains spawned
-    // in the same tick use consistent values, and so GrainRateForState (which
+    // once per OnAudioFilterRead so GrainRateForState (which
     // depends on the rate multiplier) sees up-to-date numbers.
     void UpdateAdaptiveGrainParams()
     {
@@ -504,28 +460,14 @@ public class GranularEngineAudio : MonoBehaviour
         currentGrainRateMul = Mathf.Lerp(grainRateMulWhenSteady, grainRateMulWhenChangingFast, rateFrac);
     }
 
-    // Spawns one grain from the engine voice and, if an exhaust clip is assigned,
-    // one grain from the exhaust voice at the same moment. Both voices share the
-    // same RPM, load and pitch-trajectory state — only their clips, position
-    // mapping, and the view-based gain applied at mix time (see OnAudioFilterRead)
-    // differ. This is what keeps both sources continuously present instead of
-    // switching between them.
+    // Spawns one grain from the engine voice.
     void SpawnGrain()
     {
-        SpawnGrainForSource(isExhaust: false);
-        if (exhaustEnabled) SpawnGrainForSource(isExhaust: true);
-    }
-
-    void SpawnGrainForSource(bool isExhaust)
-    {
-        ClipData sourceRevUp = isExhaust ? exhaustRevUp : revUp;
-        ClipData sourceRevDown = isExhaust ? exhaustRevDown : revDown;
-
         bool useRevUp;
         if (useThrottleBasedMix)
         {
             float effectiveThrottle = Mathf.Clamp01(throttlePosition * cdiIgnitionMultiplier);
-            useRevUp = sourceRevDown.valid ? rng.NextDouble() < effectiveThrottle : true;
+            useRevUp = revDown.valid ? rng.NextDouble() < effectiveThrottle : true;
         }
         else
         {
@@ -534,19 +476,14 @@ public class GranularEngineAudio : MonoBehaviour
             // switch — each grain independently rolls against it, same technique
             // as the throttle-based path above, so the crossfade is grain-
             // probability based rather than a hard cut.
-            useRevUp = sourceRevDown.valid ? rng.NextDouble() < mixBlend : true;
+            useRevUp = revDown.valid ? rng.NextDouble() < mixBlend : true;
         }
 
-        ClipData clip = useRevUp ? sourceRevUp : sourceRevDown;
+        ClipData clip = useRevUp ? revUp : revDown;
         if (!clip.valid || clip.totalFrames <= 1) return;
 
-        float posAtIdle = isExhaust
-            ? (useRevUp ? exhaustRevUpPosAtIdle : exhaustRevDownPosAtIdle)
-            : (useRevUp ? revUpPosAtIdle : revDownPosAtIdle);
-        float posAtRedline = isExhaust
-            ? (useRevUp ? exhaustRevUpPosAtRedline : exhaustRevDownPosAtRedline)
-            : (useRevUp ? revUpPosAtRedline : revDownPosAtRedline);
-        float targetFrac = Mathf.Lerp(posAtIdle, posAtRedline, rpmNormalized);
+        AnimationCurve positionCurve = useRevUp ? revUpPositionCurve : revDownPositionCurve;
+        float targetFrac = Mathf.Clamp01(positionCurve.Evaluate(rpmNormalized));
 
         double centerFrame = targetFrac * clip.totalFrames;
         double jitterFrames = positionJitterFraction * lastEffectiveGrainSize * clip.sampleRate;
@@ -624,7 +561,6 @@ public class GranularEngineAudio : MonoBehaviour
         grainPool[activeGrainCount] = new Grain
         {
             useRevUp = useRevUp,
-            isExhaust = isExhaust,
             readPos = start,
             playbackRate = (double)clip.sampleRate / mixSampleRate * startPitch,
             lengthSamples = lengthOutSamples,
@@ -672,8 +608,7 @@ public class GranularEngineAudio : MonoBehaviour
         // overlap beyond ~8-10 stops reading as a richer engine and starts
         // reading as broadband hiss, since incoherent overlapping grains are
         // literally how noise generators are built.
-        float sourceCountForOverlap = exhaustEnabled ? 2f : 1f;
-        float maxRateForOverlap = maxOverlapGrains / Mathf.Max(0.01f, lastEffectiveGrainSize * sourceCountForOverlap);
+        float maxRateForOverlap = maxOverlapGrains / Mathf.Max(0.01f, lastEffectiveGrainSize);
         rate = Mathf.Min(rate, maxRateForOverlap);
         CurrentGrainRate = rate;
         grainSpawnAccumulator += rate * ((double)framesInBuffer / mixSampleRate);
@@ -715,9 +650,7 @@ public class GranularEngineAudio : MonoBehaviour
                     continue;
                 }
 
-                ClipData clip = g.isExhaust
-                    ? (g.useRevUp ? exhaustRevUp : exhaustRevDown)
-                    : (g.useRevUp ? revUp : revDown);
+                ClipData clip = g.useRevUp ? revUp : revDown;
                 int sIndex = (int)g.readPos;
                 if (sIndex < 0 || sIndex >= clip.totalFrames - 1)
                 {
@@ -725,13 +658,11 @@ public class GranularEngineAudio : MonoBehaviour
                     continue;
                 }
 
-                // View-based mix: engine dominant toward the front, exhaust dominant
-                // toward the rear, each floored at minSourceMix so neither disappears.
-                float sourceGain = g.isExhaust ? currentExhaustGain : currentEngineGain;
                 float s0 = SourceFrame(clip, sIndex);
                 float s1 = SourceFrame(clip, sIndex + 1);
                 float frac = (float)(g.readPos - sIndex);
-                float voice = Mathf.Lerp(s0, s1, frac) * Window(g.age, g.lengthSamples) * g.gain * sourceGain;
+                float clipGain = g.useRevUp ? revUpGain : revDownGain;
+                float voice = Mathf.Lerp(s0, s1, frac) * Window(g.age, g.lengthSamples) * g.gain * clipGain;
 
                 // Equal-power pan per grain. This is the key move against the "tube"
                 // comb-filter artifact: many overlapping grains read near-identical

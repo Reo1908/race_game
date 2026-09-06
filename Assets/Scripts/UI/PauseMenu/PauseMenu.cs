@@ -35,9 +35,8 @@ public struct PauseMenuEntryConfig
 /// EventSystem needed, since keyboard, pad and mouse are all polled directly
 /// through the Input System.
 ///
-/// While open: Time.timeScale is 0, the last rendered frame is captured and
-/// blurred as a CRT backdrop, and the car's frozen telemetry is shown on the
-/// right-hand card.
+/// While open: Time.timeScale is 0, and the last rendered frame is captured
+/// and blurred as a CRT backdrop.
 /// </summary>
 [AddComponentMenu("UI/Retro Pause/Pause Menu")]
 [DisallowMultipleComponent]
@@ -132,10 +131,6 @@ public class PauseMenu : MonoBehaviour
 
     private AudioSource audioSource;
     private AudioClip clipMove, clipSelect, clipBack, clipOpen, clipClose;
-
-    private VehicleEngine engine;
-    private VehicleGearbox gearbox;
-    private Rigidbody carBody;
 
     private float navHoldTime;
     private int navHeldDirection;
@@ -284,7 +279,7 @@ public class PauseMenu : MonoBehaviour
         view.SetOpenProgress(0f);
         view.SetFrozenFrame(null, false);
 
-        CaptureTelemetry();
+        view.SetTelemetry(false, 0f, 0f, 0f, 0f, 0f, false, "-");
         Play(clipOpen);
 
         if (freezeFrameBackdrop)
@@ -536,33 +531,6 @@ public class PauseMenu : MonoBehaviour
 #else
         Application.Quit();
 #endif
-    }
-
-    // -------------------------------------------------------------- telemetry
-
-    private void CaptureTelemetry()
-    {
-        if (engine == null) engine = FindAnyObjectByType<VehicleEngine>();
-        if (gearbox == null) gearbox = FindAnyObjectByType<VehicleGearbox>();
-        if (carBody == null && engine != null) carBody = engine.GetComponent<Rigidbody>();
-
-        if (engine == null && gearbox == null)
-        {
-            view.SetTelemetry(false, 0f, 0f, 0f, 0f, 0f, false, "-");
-            return;
-        }
-
-        float speedKmh = carBody != null ? carBody.linearVelocity.magnitude * 3.6f : 0f;
-        float rpm = engine != null ? engine.CurrentRPM : 0f;
-        float redline = engine != null ? engine.EngineRedline : 0f;
-        float throttle = engine != null ? engine.EngineOutput : 0f;
-        float ratio = gearbox != null ? gearbox.CurrentGearRatio : 0f;
-        bool ignition = gearbox == null || gearbox.Ignition == 1;
-
-        string gearText = "-";
-        if (gearbox != null) gearText = gearbox.CurrentGear == 0 ? "R" : gearbox.CurrentGear.ToString();
-
-        view.SetTelemetry(true, speedKmh, rpm, redline, throttle, ratio, ignition, gearText);
     }
 
     // ------------------------------------------------------------ freeze frame

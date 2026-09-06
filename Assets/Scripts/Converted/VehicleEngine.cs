@@ -1,3 +1,5 @@
+using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -61,6 +63,8 @@ public class VehicleEngine : MonoBehaviour
     [Header("Downshift Blip (optional — the \"daring\" feature)")]
     [Tooltip("While disconnected during a downshift, nudges the free-rev target up to roughly match the new gear, instead of just sagging toward idle. Turn off if it misbehaves.")]
     [SerializeField] private bool enableDownshiftBlip = true;
+    [Tooltip("Synthetic throttle applied during the blip window, on top of (not replacing) whatever the player's actually pressing — needed because the blip has to work even if they're off the pedal mid-shift.")]
+    [SerializeField, Range(0f, 1f)] private float downshiftBlipThrottle = 0.6f;
 
     [Header("Debug")]
     [Tooltip("Shown on the right side of the screen in Play Mode, so it doesn't collide with the other three scripts' overlays on the left.")]
@@ -73,6 +77,7 @@ public class VehicleEngine : MonoBehaviour
     /// available power the engine is making right now, independent of throttle.</summary>
     public float EngineOutput { get; private set; }
     public float CurrentRPM { get; private set; }
+    public float EngineRedline => engineRedline;
 
     /// <summary>0-1 raw throttle pedal input, read this frame (before the ignition/rev-limiter cut is applied).</summary>
     public float Throttle { get; private set; }
@@ -82,6 +87,42 @@ public class VehicleEngine : MonoBehaviour
     public bool IgnitionOn { get; private set; }
     /// <summary>True while the downshift blip is actively holding RPM up during a disconnected downshift (see EnableDownshiftBlip).</summary>
     public bool IsBlipping { get; private set; }
+
+    /// <summary>
+    /// Lets an external system — e.g. a forced-induction script running turbos and/or
+    /// superchargers — plug extra torque into this engine's drive-force calculation every
+    /// FixedUpdate, without either script needing to know about the other's execution
+    /// order. Pass a callback that returns the torque (same units as EngineMaxTorque) that
+    /// system wants to contribute *right now*; it's invoked once per FixedUpdate, summed
+    /// with every other registered provider, and added to combustion torque before it's
+    /// turned into drive force. Being pull-based (the engine calls out, rather than the
+    /// other script pushing a value into a field) means it doesn't matter whether the
+    /// forced-induction component's own FixedUpdate has run yet this frame — the value is
+    /// always computed fresh, right when this script needs it.
+    /// </summary>
+    public void RegisterForcedInductionTorqueProvider(Func<float> torqueProvider)
+    {
+        if (torqueProvider != null && !forcedInductionTorqueProviders.Contains(torqueProvider))
+            forcedInductionTorqueProviders.Add(torqueProvider);
+    }
+
+    /// <summary>
+    /// Undoes RegisterForcedInductionTorqueProvider. Call this from the other system's
+    /// OnDisable/OnDestroy so a disabled or destroyed forced-induction setup stops
+    /// contributing torque instead of leaving a dangling callback behind.
+    /// </summary>
+    public void UnregisterForcedInductionTorqueProvider(Func<float> torqueProvider)
+    {
+        forcedInductionTorqueProviders.Remove(torqueProvider);
+    }
+
+    private float SumForcedInductionTorque()
+    {
+        float total = 0f;
+        for (int i = 0; i < forcedInductionTorqueProviders.Count; i++)
+            total += forcedInductionTorqueProviders[i]?.Invoke() ?? 0f;
+        return total;
+    }
 
     private Rigidbody rb;
     private VehicleSuspension suspension;
@@ -93,11 +134,17 @@ public class VehicleEngine : MonoBehaviour
     private float smoothedDrift;
     private float smoothedAutoClutchFactor;
     private float previousGearRatio;
+    private bool hasReadGearRatio;
     private bool pendingDownshiftBlip;
+
+    // New: pull-based hooks for forced induction (or anything else) that wants to add
+    // torque into the drive-force calc. See RegisterForcedInductionTorqueProvider below
+    // for why this is a callback list rather than a field the other script writes to.
+    private readonly List<Func<float>> forcedInductionTorqueProviders = new List<Func<float>>();
 
     // Kept at class scope purely so OnGUI can show them without recomputing.
     private float debugThrottle, debugDriveForce, debugConnectionFactor, debugGroundContact;
-    private float debugHandbrakeApplied, debugWheelRPM, debugWheelImpliedRPM;
+    private float debugHandbrakeApplied, debugWheelRPM, debugWheelImpliedRPM, debugBoostTorque;
     private int debugClutch;
     private bool debugIgnitionOn;
 
@@ -188,13 +235,13 @@ public class VehicleEngine : MonoBehaviour
         float throttle = throttleAction != null && throttleAction.action != null
             ? Mathf.Clamp01(throttleAction.action.ReadValue<float>())
             : 0f;
-        float effectiveThrottle = ignitionOn ? throttle : 0f;
-
-        Throttle = throttle;
-        IgnitionOn = ignitionOn;
 
         // ---- Optional downshift blip ----
-        if (enableDownshiftBlip)
+        // hasReadGearRatio guards frame one: previousGearRatio starts at 0, so without
+        // this, the very first real gear ratio (e.g. 2.5) would look like a huge
+        // increase — a false-positive downshift right at startup, before any shift has
+        // actually happened.
+        if (enableDownshiftBlip && hasReadGearRatio)
         {
             if (currentGearRatio > previousGearRatio + 0.0001f)
                 pendingDownshiftBlip = true;
@@ -202,7 +249,23 @@ public class VehicleEngine : MonoBehaviour
                 pendingDownshiftBlip = false;
         }
         previousGearRatio = currentGearRatio;
+        hasReadGearRatio = true;
         IsBlipping = enableDownshiftBlip && pendingDownshiftBlip;
+
+        // A blip needs the engine actually combusting to rev up. Ignition being false
+        // for the whole shift (Gearbox cuts it for both halves) meant driveTorque was
+        // always 0 during the old blip, which just force-set the RPM number directly —
+        // IgnitionOn read false the entire time even while RPM visibly climbed. This
+        // overrides just the shift-cut, not the rev limiter, for the blip window, and
+        // feeds a synthetic throttle blip so it works even if the player's off the
+        // pedal mid-shift.
+        if (IsBlipping && CurrentRPM < engineRedline)
+            ignitionOn = true;
+
+        Throttle = throttle;
+        IgnitionOn = ignitionOn;
+
+        float effectiveThrottle = IsBlipping ? Mathf.Max(throttle, downshiftBlipThrottle) : throttle;
 
         // ---- Free-rev vs. drivetrain-coupled RPM ----
         // Torque curve sampled off last frame's RPM, since this frame's new RPM is what
@@ -223,7 +286,15 @@ public class VehicleEngine : MonoBehaviour
         // sit dead at idle and never rev up at all. These two now need to be in the
         // same ballpark for the engine to move — try something like Friction ≈ 5-15%
         // of MaxTorque as a starting point and retune by feel from there.
-        float driveTorque = ignitionOn ? engineMaxTorque * torqueMultiplier * throttle : 0f;
+        // Always tick forced induction — even with ignition cut — so modules can react
+        // (and their sound/spool can decay) the instant ignition drops during a shift,
+        // instead of freezing at whatever state they were last in. Only the resulting
+        // torque is gated on ignition; see GetCombinedTorque on the forced-induction side
+        // for how it also stops treating the engine as flowing exhaust once IgnitionOn is
+        // false, even if the player's still holding the throttle down through the shift.
+        float rawBoostTorque = SumForcedInductionTorque();
+        float boostTorque = ignitionOn ? rawBoostTorque : 0f;
+        float driveTorque = (ignitionOn ? engineMaxTorque * torqueMultiplier * effectiveThrottle : 0f) + boostTorque;
         float frictionTorque = engineFriction;
         float netFreeTorque = driveTorque - frictionTorque;
         float freeAccelRPMPerSec = (netFreeTorque / Mathf.Max(1f, engineInertia)) * engineChangeRate;
@@ -232,7 +303,10 @@ public class VehicleEngine : MonoBehaviour
         // holding idle via a proper idle-air-control governor isn't modeled here.
         if (ignitionOn)
             freeRPM = Mathf.Max(freeRPM, engineIdleRPM);
-        if (enableDownshiftBlip && pendingDownshiftBlip)
+        // Backstop, not the primary mechanism anymore — real combustion (above) should
+        // get RPM most of the way there on its own now; this just guarantees the blip
+        // still does something audible even before Friction/MaxTorque below are retuned.
+        if (IsBlipping)
             freeRPM = Mathf.Max(freeRPM, wheelImpliedRPM);
 
         float coupledRPM = Mathf.Lerp(CurrentRPM, wheelImpliedRPM, Mathf.Clamp01(clutchHardness * dt));
@@ -254,7 +328,7 @@ public class VehicleEngine : MonoBehaviour
         // free-rev accel; driveTorque doubles as rawTorque here.
         smoothedTorque = Mathf.MoveTowards(smoothedTorque, driveTorque, engineResponse * dt);
 
-        float engineBrakingForce = (engineEngineBraking * engineFriction * normalizedRPM * (1f - throttle)) / Mathf.Max(1f, engineInertia);
+        float engineBrakingForce = (engineEngineBraking * engineFriction * normalizedRPM * (1f - effectiveThrottle)) / Mathf.Max(1f, engineInertia);
         float netTorque = smoothedTorque - engineBrakingForce;
 
         float driveForce = netTorque * currentGearRatio * finalDrive * connectionFactor;
@@ -296,6 +370,7 @@ public class VehicleEngine : MonoBehaviour
         debugWheelImpliedRPM = wheelImpliedRPM;
         debugClutch = clutch;
         debugIgnitionOn = ignitionOn;
+        debugBoostTorque = boostTorque;
     }
 
     private static AnimationCurve BuildDefaultTorqueCurve()
@@ -351,7 +426,7 @@ public class VehicleEngine : MonoBehaviour
         Line($"RPM: {CurrentRPM:F0} / {engineRedline:F0}   (Idle {engineIdleRPM:F0})");
         Line($"EngineOutput: {EngineOutput:F3}");
         Line($"Throttle: {debugThrottle:F2}   Ignition: {(debugIgnitionOn ? 1 : 0)}");
-        Line($"Drive Force: {debugDriveForce:F2}");
+        Line($"Drive Force: {debugDriveForce:F2}   (Boost Torque: {debugBoostTorque:F2})");
         Line($"Connection: {debugConnectionFactor:F2}  (Clutch {debugClutch}, Ground {debugGroundContact:F2}, Handbrake {debugHandbrakeApplied:F2})");
         Line($"Gear Ratio: {(gearbox != null ? gearbox.CurrentGearRatio : 0f):F2}   Final Drive: {finalDrive:F2}");
         Line($"Wheel RPM: {debugWheelRPM:F0}   Wheel-Implied RPM: {debugWheelImpliedRPM:F0}");

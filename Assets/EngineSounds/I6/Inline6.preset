@@ -1,0 +1,652 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!181963792 &2655988077585873504
+Preset:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Inline6
+  m_TargetType:
+    m_NativeTypeID: 114
+    m_ManagedTypePPtr: {fileID: 11500000, guid: 7d5686ade6fd60d41881c39e2cc369d9, type: 3}
+    m_ManagedTypeFallback: 
+  m_Properties:
+  - target: {fileID: 0}
+    propertyPath: m_Enabled
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_EditorHideFlags
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_EditorClassIdentifier
+    value: Assembly-CSharp::GranularEngineAudio
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: revUpClip
+    value: 
+    objectReference: {fileID: 8300000, guid: 69daf44ce273c6d4485150a9c3da4065, type: 3}
+  - target: {fileID: 0}
+    propertyPath: revUpGain
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: revDownClip
+    value: 
+    objectReference: {fileID: 8300000, guid: cb08c6d2460b0b64e90b3c8db30deec4, type: 3}
+  - target: {fileID: 0}
+    propertyPath: revDownGain
+    value: 0.312
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: revUpPositionCurve.m_Curve.Array.size
+    value: 5
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: revUpPositionCurve.m_Curve.Array.data[0].time
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: revUpPositionCurve.m_Curve.Array.data[0].value
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: revUpPositionCurve.m_Curve.Array.data[0].inSlope
+    value: 1.7071885
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: revUpPositionCurve.m_Curve.Array.data[0].outSlope
+    value: 1.7071885
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: revUpPositionCurve.m_Curve.Array.data[0].tangentMode
+    value: 34
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: revUpPositionCurve.m_Curve.Array.data[0].weightedMode
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: revUpPositionCurve.m_Curve.Array.data[0].inWeight
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: revUpPositionCurve.m_Curve.Array.data[0].outWeight
+    value: 0.33333334
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: revUpPositionCurve.m_Curve.Array.data[1].time
+    value: 0.1261602
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: revUpPositionCurve.m_Curve.Array.data[1].value
+    value: 0.21537925
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: revUpPositionCurve.m_Curve.Array.data[1].inSlope
+    value: 1.5724078
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: revUpPositionCurve.m_Curve.Array.data[1].outSlope
+    value: 1.5724078
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: revUpPositionCurve.m_Curve.Array.data[1].tangentMode
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: revUpPositionCurve.m_Curve.Array.data[1].weightedMode
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: revUpPositionCurve.m_Curve.Array.data[1].inWeight
+    value: 0.33333334
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: revUpPositionCurve.m_Curve.Array.data[1].outWeight
+    value: 0.33333334
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: revUpPositionCurve.m_Curve.Array.data[2].time
+    value: 0.20010221
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: revUpPositionCurve.m_Curve.Array.data[2].value
+    value: 0.31401452
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: revUpPositionCurve.m_Curve.Array.data[2].inSlope
+    value: 1.3027009
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: revUpPositionCurve.m_Curve.Array.data[2].outSlope
+    value: 1.3027009
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: revUpPositionCurve.m_Curve.Array.data[2].tangentMode
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: revUpPositionCurve.m_Curve.Array.data[2].weightedMode
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: revUpPositionCurve.m_Curve.Array.data[2].inWeight
+    value: 0.33333334
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: revUpPositionCurve.m_Curve.Array.data[2].outWeight
+    value: 0.33333334
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: revUpPositionCurve.m_Curve.Array.data[3].time
+    value: 0.49160612
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: revUpPositionCurve.m_Curve.Array.data[3].value
+    value: 0.6394623
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: revUpPositionCurve.m_Curve.Array.data[3].inSlope
+    value: 0.9175564
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: revUpPositionCurve.m_Curve.Array.data[3].outSlope
+    value: 0.9175564
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: revUpPositionCurve.m_Curve.Array.data[3].tangentMode
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: revUpPositionCurve.m_Curve.Array.data[3].weightedMode
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: revUpPositionCurve.m_Curve.Array.data[3].inWeight
+    value: 0.33333334
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: revUpPositionCurve.m_Curve.Array.data[3].outWeight
+    value: 0.33333334
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: revUpPositionCurve.m_Curve.Array.data[4].time
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: revUpPositionCurve.m_Curve.Array.data[4].value
+    value: 0.9346512
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: revUpPositionCurve.m_Curve.Array.data[4].inSlope
+    value: 0.5806303
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: revUpPositionCurve.m_Curve.Array.data[4].outSlope
+    value: 0.5806303
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: revUpPositionCurve.m_Curve.Array.data[4].tangentMode
+    value: 34
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: revUpPositionCurve.m_Curve.Array.data[4].weightedMode
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: revUpPositionCurve.m_Curve.Array.data[4].inWeight
+    value: 0.33333334
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: revUpPositionCurve.m_Curve.Array.data[4].outWeight
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: revUpPositionCurve.m_PreInfinity
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: revUpPositionCurve.m_PostInfinity
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: revUpPositionCurve.m_RotationOrder
+    value: 4
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: revDownPositionCurve.m_Curve.Array.size
+    value: 7
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: revDownPositionCurve.m_Curve.Array.data[0].time
+    value: -0.0012089703
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: revDownPositionCurve.m_Curve.Array.data[0].value
+    value: 1.0006659
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: revDownPositionCurve.m_Curve.Array.data[0].inSlope
+    value: -2.0434175
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: revDownPositionCurve.m_Curve.Array.data[0].outSlope
+    value: -2.0434175
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: revDownPositionCurve.m_Curve.Array.data[0].tangentMode
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: revDownPositionCurve.m_Curve.Array.data[0].weightedMode
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: revDownPositionCurve.m_Curve.Array.data[0].inWeight
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: revDownPositionCurve.m_Curve.Array.data[0].outWeight
+    value: 0.10912731
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: revDownPositionCurve.m_Curve.Array.data[1].time
+    value: 0.04387712
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: revDownPositionCurve.m_Curve.Array.data[1].value
+    value: 0.6606602
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: revDownPositionCurve.m_Curve.Array.data[1].inSlope
+    value: -1.6963599
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: revDownPositionCurve.m_Curve.Array.data[1].outSlope
+    value: -1.6963599
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: revDownPositionCurve.m_Curve.Array.data[1].tangentMode
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: revDownPositionCurve.m_Curve.Array.data[1].weightedMode
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: revDownPositionCurve.m_Curve.Array.data[1].inWeight
+    value: 0.33333334
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: revDownPositionCurve.m_Curve.Array.data[1].outWeight
+    value: 0.2957014
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: revDownPositionCurve.m_Curve.Array.data[2].time
+    value: 0.12218874
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: revDownPositionCurve.m_Curve.Array.data[2].value
+    value: 0.49708232
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: revDownPositionCurve.m_Curve.Array.data[2].inSlope
+    value: -1.4520838
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: revDownPositionCurve.m_Curve.Array.data[2].outSlope
+    value: -1.4520838
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: revDownPositionCurve.m_Curve.Array.data[2].tangentMode
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: revDownPositionCurve.m_Curve.Array.data[2].weightedMode
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: revDownPositionCurve.m_Curve.Array.data[2].inWeight
+    value: 0.33333334
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: revDownPositionCurve.m_Curve.Array.data[2].outWeight
+    value: 0.33333334
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: revDownPositionCurve.m_Curve.Array.data[3].time
+    value: 0.21442962
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: revDownPositionCurve.m_Curve.Array.data[3].value
+    value: 0.37750572
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: revDownPositionCurve.m_Curve.Array.data[3].inSlope
+    value: -1.0582563
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: revDownPositionCurve.m_Curve.Array.data[3].outSlope
+    value: -1.0582563
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: revDownPositionCurve.m_Curve.Array.data[3].tangentMode
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: revDownPositionCurve.m_Curve.Array.data[3].weightedMode
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: revDownPositionCurve.m_Curve.Array.data[3].inWeight
+    value: 0.52961767
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: revDownPositionCurve.m_Curve.Array.data[3].outWeight
+    value: 0.33333334
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: revDownPositionCurve.m_Curve.Array.data[4].time
+    value: 0.49859336
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: revDownPositionCurve.m_Curve.Array.data[4].value
+    value: 0.19153093
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: revDownPositionCurve.m_Curve.Array.data[4].inSlope
+    value: -0.39663333
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: revDownPositionCurve.m_Curve.Array.data[4].outSlope
+    value: -0.39663333
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: revDownPositionCurve.m_Curve.Array.data[4].tangentMode
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: revDownPositionCurve.m_Curve.Array.data[4].weightedMode
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: revDownPositionCurve.m_Curve.Array.data[4].inWeight
+    value: 0.17247781
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: revDownPositionCurve.m_Curve.Array.data[4].outWeight
+    value: 0.10066192
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: revDownPositionCurve.m_Curve.Array.data[5].time
+    value: 0.7196759
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: revDownPositionCurve.m_Curve.Array.data[5].value
+    value: 0.111858696
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: revDownPositionCurve.m_Curve.Array.data[5].inSlope
+    value: -0.2096935
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: revDownPositionCurve.m_Curve.Array.data[5].outSlope
+    value: -0.2096935
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: revDownPositionCurve.m_Curve.Array.data[5].tangentMode
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: revDownPositionCurve.m_Curve.Array.data[5].weightedMode
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: revDownPositionCurve.m_Curve.Array.data[5].inWeight
+    value: 0.33333334
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: revDownPositionCurve.m_Curve.Array.data[5].outWeight
+    value: 0.33333334
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: revDownPositionCurve.m_Curve.Array.data[6].time
+    value: 0.9975196
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: revDownPositionCurve.m_Curve.Array.data[6].value
+    value: 0.03069529
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: revDownPositionCurve.m_Curve.Array.data[6].inSlope
+    value: -0.29211894
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: revDownPositionCurve.m_Curve.Array.data[6].outSlope
+    value: -0.29211894
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: revDownPositionCurve.m_Curve.Array.data[6].tangentMode
+    value: 34
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: revDownPositionCurve.m_Curve.Array.data[6].weightedMode
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: revDownPositionCurve.m_Curve.Array.data[6].inWeight
+    value: 0.33333334
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: revDownPositionCurve.m_Curve.Array.data[6].outWeight
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: revDownPositionCurve.m_PreInfinity
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: revDownPositionCurve.m_PostInfinity
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: revDownPositionCurve.m_RotationOrder
+    value: 4
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: engineSource
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: rpmNormalized
+    value: 0.1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: load
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: useThrottleBasedMix
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: throttlePosition
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: cdiIgnitionMultiplier
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: autoDetectSensitivity
+    value: 0.05
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: crossfadeSeconds
+    value: 0.365
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: adaptCrossfadeToRpm
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: crossfadeSecondsWhenSteady
+    value: 1.373
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: crossfadeRateMulWhenChangingFast
+    value: 0.5
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: rpmRateSmoothing
+    value: 0.5
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: grainSizeSeconds
+    value: 0.177
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: adaptGrainToRpmRate
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: grainSizeWhenSteady
+    value: 0.308
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: grainSizeWhenChangingFast
+    value: 0.02
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: grainRateMulWhenSteady
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: grainRateMulWhenChangingFast
+    value: 1.94
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: rpmRateForMaxGrainAdapt
+    value: 1.2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: maxOverlapGrains
+    value: 9
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: minGrainRate
+    value: 60
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: maxGrainRate
+    value: 260
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: fineTunePitchRange.x
+    value: 0.95
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: fineTunePitchRange.y
+    value: 1.05
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: pitchJitter
+    value: 0.01
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: pitchWanderStep
+    value: 0.01
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: grainPitchDriftMax
+    value: 0.2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: rpmRateForMaxDrift
+    value: 1.5
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: positionJitterFraction
+    value: 0.4
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: useCycleAlignedJitter
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: spawnTimingJitter
+    value: 0.04
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: grainLengthJitter
+    value: 0.0166
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: grainAmplitudeJitter
+    value: 0.0169
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: stereoSpread
+    value: 0.034
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: panWanderStep
+    value: 0.0049
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: panLocalJitter
+    value: 0.012
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: masterGain
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: normalizeForOverlap
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: softClipOutput
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: denoiseLowpassEnabled
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: denoiseLowpassCutoffHz
+    value: 2712
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: denoiseGateEnabled
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: denoiseGateThresholdLow
+    value: 0.0064
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: denoiseGateThresholdHigh
+    value: 0.037
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: denoiseGateFloor
+    value: 0.138
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: denoiseGateAttackSeconds
+    value: 0.0047
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: denoiseGateReleaseSeconds
+    value: 0.037
+    objectReference: {fileID: 0}
+  m_ExcludedProperties: []
+  m_CoupledType:
+    m_NativeTypeID: 0
+    m_ManagedTypePPtr: {fileID: 0}
+    m_ManagedTypeFallback: 
+  m_CoupledProperties: []
