@@ -25,10 +25,6 @@ Shader "Custom/TyreSmokeLit"
         _SoftParticlesDistance ("Soft Particles Fade Distance", Float) = 1.0
         _AlphaClipThreshold ("Alpha Cutout (0 = off)", Range(0,1)) = 0.0
 
-        [Header(Background Blur)]
-        _BlurStrength ("Blur Radius (screen UV)", Range(0, 1.0)) = 0.015
-        _BlurTintAmount ("Smoke Tint Over Blur", Range(0,1)) = 0.6
-
         [Header(Procedural Animated Smoke Noise)]
         [Toggle(_USE_PROCEDURAL_NOISE)] _UseProceduralNoise ("Use Procedural Noise", Float) = 0
         _NoiseScale ("Noise Scale", Range(0.5, 12)) = 3.5
@@ -71,7 +67,6 @@ Shader "Custom/TyreSmokeLit"
             #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl"
             #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Lighting.hlsl"
             #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/DeclareDepthTexture.hlsl"
-            #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/DeclareOpaqueTexture.hlsl"
 
             struct Attributes
             {
@@ -104,8 +99,6 @@ Shader "Custom/TyreSmokeLit"
                 float _LightWrap;
                 float _SoftParticlesDistance;
                 float _AlphaClipThreshold;
-                float _BlurStrength;
-                float _BlurTintAmount;
                 float _NoiseScale;
                 float _NoiseSpeed;
                 float _NoiseContrast;
@@ -174,24 +167,6 @@ Shader "Custom/TyreSmokeLit"
                 float dist = length(uv - 0.5) * 2.0; // 0 at center, 1 at the sprite's edge
                 dist += (noiseSample - 0.5) * edgeNoiseAmount;
                 return saturate(1.0 - smoothstep(1.0 - edgeSoftness, 1.0, dist));
-            }
-
-            // Cheap 9-tap blur of whatever is behind the particle (the already-rendered opaque scene).
-            half3 SampleBlurredBackground(float2 uv, float radius)
-            {
-                const float2 offsets[8] = {
-                    float2( 1,  0), float2(-1,  0), float2(0,  1), float2(0, -1),
-                    float2( 0.7071,  0.7071), float2(-0.7071,  0.7071),
-                    float2( 0.7071, -0.7071), float2(-0.7071, -0.7071)
-                };
-
-                half3 sum = SampleSceneColor(uv).rgb;
-                UNITY_UNROLL
-                for (int i = 0; i < 8; i++)
-                {
-                    sum += SampleSceneColor(uv + offsets[i] * radius).rgb;
-                }
-                return sum / 9.0;
             }
 
             Varyings vert(Attributes IN)
@@ -275,30 +250,13 @@ Shader "Custom/TyreSmokeLit"
 
                 half3 litSmoke = baseColor.rgb * lighting;
 
-                // --- Blur whatever is behind the smoke ---
-                // (hardware alpha blending only interpolates one pixel with itself - it can't blur,
-                // so we manually sample and average neighbouring pixels of the opaque scene here,
-                // then blend our own lit smoke color on top of that blurred result.)
-                // NOTE: radius is no longer scaled by baseColor.a. The wispy, low-alpha edges are
-                // exactly where you want the halo to spread - shrinking the radius there was
-                // killing the effect right where it mattered most.
-                float blurRadius = _BlurStrength;
-                half3 blurredBG = SampleBlurredBackground(IN.screenUV, blurRadius);
-                half3 smokeOverBlur = lerp(blurredBG, litSmoke, _BlurTintAmount);
-
                 // How "present" the smoke is at this pixel: its own alpha plus the soft-particle fade.
                 half coverage = saturate(baseColor.a * softFactor);
 
-                half3 finalColor = MixFog(smokeOverBlur, IN.fogCoord);
+                half3 finalColor = MixFog(litSmoke, IN.fogCoord);
 
-                // IMPORTANT: this pass uses PREMULTIPLIED alpha (Blend One OneMinusSrcAlpha).
-                // finalColor above is already the fully-composited pixel (smoke blended over our
-                // manually-blurred background). Blending it again with regular
-                // SrcAlpha/OneMinusSrcAlpha would mix it with the real, SHARP back-buffer a second
-                // time - that double-mix is what was cancelling out almost all of the blur.
-                // Premultiplying by coverage means: fully transparent pixels show the real scene
-                // untouched, fully covered pixels show our blurred composite untouched, and
-                // everything in between blends cleanly with no second dilution.
+                // This pass uses PREMULTIPLIED alpha (Blend One OneMinusSrcAlpha), so we
+                // premultiply the color by coverage ourselves before returning.
                 return half4(finalColor * coverage, coverage);
             }
             ENDHLSL

@@ -107,12 +107,12 @@ Material:
     - _AlphaClip: 0
     - _AlphaClipThreshold: 0
     - _AlphaToMask: 0
-    - _AmbientBoost: 1
+    - _AmbientBoost: 1.29
     - _Blend: 0
     - _BlendModePreserveSpecular: 0
     - _BlendOp: 0
-    - _BlurStrength: 0.075
-    - _BlurTintAmount: 0.363
+    - _BlurStrength: 0
+    - _BlurTintAmount: 0
     - _BumpScale: 1
     - _CameraFadingEnabled: 0
     - _CameraFarFadeDistance: 2
