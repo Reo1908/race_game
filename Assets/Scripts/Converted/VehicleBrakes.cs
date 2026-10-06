@@ -41,6 +41,9 @@ public class VehicleBrakes : MonoBehaviour
     // internal to this graph (fed straight from the raw brake input, unsmoothed).
     private float braking;
 
+    /// <summary>Regular brake input (0..1, unsmoothed). Read by VehicleHandling.</summary>
+    public float Braking => braking;
+
     /// <summary>
     /// Inverted on purpose, matching the original: 1 = handbrake released, 0 = fully applied.
     /// Other scripts should read it in this inverted form, same as the visual graph.

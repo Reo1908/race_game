@@ -73,8 +73,9 @@ public class VehicleEngine : MonoBehaviour
     [SerializeField] private float debugMinPitch = 0.8f;
     [SerializeField] private float debugMaxPitch = 2.5f;
 
-    /// <summary>0-1. Current RPM's position on the torque curve — how much of its
-    /// available power the engine is making right now, independent of throttle.</summary>
+    /// <summary>0-1. Normalized RPM (CurrentRPM / EngineRedline) multiplied by the raw
+    /// throttle pedal input. 0 off the pedal, 1 only at redline with the pedal fully down.
+    /// No longer reads the torque curve (that still drives actual engine torque).</summary>
     public float EngineOutput { get; private set; }
     public float CurrentRPM { get; private set; }
     public float EngineRedline => engineRedline;
@@ -273,7 +274,6 @@ public class VehicleEngine : MonoBehaviour
         // of resampling the curve a second time.
         float normalizedRPM = Mathf.Clamp01(CurrentRPM / engineRedline);
         float torqueMultiplier = engineTorqueCurve.Evaluate(normalizedRPM);
-        EngineOutput = torqueMultiplier;
 
         // Real torque/inertia model for free-revving: EngineInertia now genuinely
         // resists any change in RPM (bigger flywheel = slower to rev up AND slower to
@@ -322,6 +322,7 @@ public class VehicleEngine : MonoBehaviour
 
         CurrentRPM = Mathf.Clamp(newRPM, 0f, engineRedline);
         RpmNormalized = Mathf.Clamp01(CurrentRPM / engineRedline);
+        EngineOutput = Mathf.Clamp01(RpmNormalized * throttle);
 
         // ---- Torque -> DriveForce ----
         // normalizedRPM/torqueMultiplier/driveTorque already computed above for the

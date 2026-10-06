@@ -29,7 +29,7 @@ public class DetermineDrift : MonoBehaviour
     /// <summary>
     /// Angle of attack / slip angle in degrees, signed (positive/negative = which way the
     /// car is sliding). Exposed publicly so future scripts that need slip angle can just
-    /// read this instead of re-deriving it — see the reconstruction note below.
+    /// read this instead of re-deriving it. Ported from the "Get AOS" macro.
     /// </summary>
     public float AOA { get; private set; }
 
@@ -56,14 +56,15 @@ public class DetermineDrift : MonoBehaviour
         Vector3 acceleration = (velocity - previousVelocity) / Time.fixedDeltaTime;
         previousVelocity = velocity;
 
-        // --- Reconstructed "AOA" (angle of slip) subgraph ---
-        // Same situation — this is a separate macro with no visible inputs. Signed angle
-        // between forward and flattened velocity is the standard slip-angle formula, and
-        // matches the Abs() applied right after it reads this value. You mentioned future
-        // scripts will reuse this same macro — once you show me its actual contents I'll
-        // correct this (and this script) to match exactly.
+        // --- "Get AOS" subgraph (exact port of the macro) ---
+        // Angle of slip = atan2(local X, local Z) of the velocity in degrees, faded in with
+        // speed (Clamp01 of total speed * Clamp01 of horizontal speed) so it settles to 0
+        // when nearly stopped.
         Vector3 flatVelocity = new Vector3(velocity.x, 0f, velocity.z);
-        AOA = Vector3.SignedAngle(transform.forward, flatVelocity, transform.up);
+        Vector3 localVelocity = transform.InverseTransformDirection(velocity);
+        AOA = Mathf.Atan2(localVelocity.x, localVelocity.z) * Mathf.Rad2Deg
+              * Mathf.Clamp01(velocity.magnitude)
+              * Mathf.Clamp01(flatVelocity.magnitude);
 
         // --- From here down, this is the graph's actual math, unchanged ---
         int drivetrainDirection = gearbox != null ? gearbox.DrivetrainDirection : 1;

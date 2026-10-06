@@ -22,6 +22,7 @@ public class VehicleHandling : MonoBehaviour
     private VehicleSuspension suspension;
     private VehicleGearbox gearbox;
     private VehicleEngine engine;
+    private VehicleBrakes brakes;
     private DetermineDrift determineDrift;
 
     private float FrontAxleCompression => suspension.FrontAxleCompression;
@@ -29,6 +30,12 @@ public class VehicleHandling : MonoBehaviour
     private float AverageCompression => suspension.AverageCompression;
     private float CurrentGearRatio => gearbox.CurrentGearRatio;
     private float EngineOutput => engine.EngineOutput;
+    private float Handbrake => brakes.Handbrake;   // 1 = released, 0 = fully pulled (multiplies all grip)
+    private float Braking => brakes.Braking;
+
+    // Read by VehicleAnimations
+    public float Steering => steering;
+    public float TransitionSpeed => transitionSpeed;
 
     // ------------------------------------------------------------------
     // Object variables -> serialized fields
@@ -40,11 +47,8 @@ public class VehicleHandling : MonoBehaviour
     [SerializeField] private float additionalGravity = -0.3f;
     [SerializeField] private float dragCoefficient = 0.31f;
     [SerializeField] private float transitionSpeed = 5f;
-
-    [Header("Driver Input")]
-    [SerializeField] private float braking;
-    [SerializeField, Tooltip("Preset default was 0, but grip forces are multiplied by this, so 0 = no grip. Set to 1 for normal driving; whatever drives the handbrake should write it.")]
-    private float handbrake = 1f;
+    [Tooltip("Strength of the yaw (turning) angular-velocity damping. Moved here from the Lean section of the Animations graph.")]
+    [SerializeField] private float stability = 3f;
 
     [Header("Steering")]
     [SerializeField] private float turnRate = 2.3f;
@@ -64,6 +68,8 @@ public class VehicleHandling : MonoBehaviour
     [SerializeField] private float grip = 6f;
     [SerializeField] private float driftGrip = 5f;
     [SerializeField] private float driftDirection = 0.18f;
+    [Tooltip("Base amount the spline frame follows the car's own direction, even off throttle (the graph hardcoded this as 0.08).")]
+    [SerializeField] private float offThrottleFollow = 0.08f;
     [SerializeField] private float driftDirectionReactionSpeed = 6f;
 
     [Header("Runtime values (written by this script)")]
@@ -161,6 +167,7 @@ public class VehicleHandling : MonoBehaviour
         suspension = GetComponent<VehicleSuspension>();
         gearbox = GetComponent<VehicleGearbox>();
         engine = GetComponent<VehicleEngine>();
+        brakes = GetComponent<VehicleBrakes>();
     }
 
     private void Start()
@@ -178,6 +185,7 @@ public class VehicleHandling : MonoBehaviour
         rb.AddForce(new Vector3(0f, additionalGravity, 0f), ForceMode.VelocityChange);
 
         ApplyDrag();
+        ApplyStability();
     }
 
     // ==================================================================
@@ -202,8 +210,8 @@ public class VehicleHandling : MonoBehaviour
         float responseSpeed = gripSteeringResponse * gripTarget + driftSteeringResponse * driftTarget;
 
         // HandbrakeAdd / BrakeAdd / ThrottleAdd subgraphs
-        float handbrakeAdd = 1f + (1f - handbrake) * handbrakeSteeringAdd;
-        float brakeAdd = braking * brakeSteeringAdd;
+        float handbrakeAdd = 1f + (1f - Handbrake) * handbrakeSteeringAdd;
+        float brakeAdd = Braking * brakeSteeringAdd;
         float throttleAdd = throttleSteeringAdd * Mathf.Clamp01(1f - EngineOutput);
 
         float steerTorque =
@@ -242,9 +250,9 @@ public class VehicleHandling : MonoBehaviour
         return Aoa * Mathf.Clamp(LocalVelocity.z * 0.01f, 0f, 1f)
                * rearTyreLerp.Step(gripTarget, transitionSpeed)
                * rearGrip
-               * handbrake
+               * Handbrake
                * Mathf.Clamp(comp, 0f, 1f)
-               * (1f - brakeRearBalance * braking);
+               * (1f - brakeRearBalance * Braking);
     }
 
     // "Throttle Oversteer" subgraph
@@ -261,7 +269,7 @@ public class VehicleHandling : MonoBehaviour
                               * gearRatio
                               * blend;
 
-        return (counterSteer + throttleSlide) * handbrake;
+        return (counterSteer + throttleSlide) * Handbrake;
     }
 
     // Unnamed subgraph -> "SteeringMultiplier Filtered"
@@ -295,7 +303,7 @@ public class VehicleHandling : MonoBehaviour
 
             float driftYawTarget =
                 driftAoaCurve.Evaluate(Aoa)
-                * ((driftDirection * -1f + -0.08f) * driftYawBlendLerp.Step(driftTarget, transitionSpeed * 1.5f))
+                * (-(driftDirection + offThrottleFollow) * driftYawBlendLerp.Step(driftTarget, transitionSpeed * 1.5f))
                 * driftEngineCurve.Evaluate(EngineOutput);
 
             float driftYaw = driftYawLerp.Step(driftYawTarget, driftDirectionReactionSpeed);
@@ -312,9 +320,9 @@ public class VehicleHandling : MonoBehaviour
         Vector3 driftForce = Vector3.Scale(SplineRight, new Vector3(driftSlip, 0f, driftSlip))
                              * driftForceLerp.Step(driftTarget, transitionSpeed);
 
-        rb.AddForce((gripForce + driftForce) * handbrake * compression, ForceMode.Acceleration);
-        dbgGripForce = gripForce * handbrake * compression;
-        dbgDriftForce = driftForce * handbrake * compression;
+        rb.AddForce((gripForce + driftForce) * Handbrake * compression, ForceMode.Acceleration);
+        dbgGripForce = gripForce * Handbrake * compression;
+        dbgDriftForce = driftForce * Handbrake * compression;
 
         currentSpeed = Mathf.Abs(Vector3.Dot(rb.linearVelocity, SplineForward));
         turning = Vector3.Dot(rb.linearVelocity, SplineRight) * -1f;
@@ -338,6 +346,15 @@ public class VehicleHandling : MonoBehaviour
         float mag = vel.magnitude;
         float dragAmount = mag * mag * -0.001f * dragCoefficient;
         rb.AddForce(vel.normalized * dragAmount, ForceMode.Acceleration);
+    }
+
+    // ==================================================================
+    // STABILITY (yaw damping)
+    // ==================================================================
+    private void ApplyStability()
+    {
+        float localYawRate = transform.InverseTransformDirection(rb.angularVelocity).y;
+        rb.AddRelativeTorque(0f, -stability * localYawRate, 0f, ForceMode.Acceleration);
     }
 
     // ==================================================================
@@ -370,7 +387,7 @@ public class VehicleHandling : MonoBehaviour
         Line($"Steering: {steering:F2}   Engine: {EngineOutput:F2}   Gear ratio: {CurrentGearRatio:F2}");
         Line($"Compression F/R/Avg: {FrontAxleCompression:F2} / {RearAxleCompression:F2} / {AverageCompression:F2}");
         Line($"Grip1Drift0: {determineDrift.Grip1Drift0:F2}   AOA: {Aoa:F1}");
-        Line($"Handbrake: {handbrake:F2}   Braking: {braking:F2}");
+        Line($"Handbrake: {Handbrake:F2}   Braking: {Braking:F2}");
         Line($"Yaw torque: {dbgYaw:F3}  (steer {dbgSteerTorque:F2}, rear {dbgRearTyre:F2}, oversteer {dbgOversteer:F2}, x{dbgSteerMult:F2})");
         Line($"Front lateral force: {dbgFrontLateral:F3}");
         Line($"Grip force: {dbgGripForce.magnitude:F2}   Drift force: {dbgDriftForce.magnitude:F2}");
