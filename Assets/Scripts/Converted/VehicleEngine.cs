@@ -49,6 +49,8 @@ public class VehicleEngine : MonoBehaviour
     [SerializeField] private float driveForceMultiplier = 0.0001f;
     [Tooltip("How much of the drift-portion of the force gets redirected into the world velocity direction instead of the car's relative forward.")]
     [SerializeField] private float directionalForceMultiplier = 1f;
+    /// <summary>Set at runtime by VehicleHandling's Drift > Grip slider (overrides the field above while playing).</summary>
+    public float DirectionalForceMultiplier { get => directionalForceMultiplier; set => directionalForceMultiplier = value; }
     [SerializeField] private float transitionSpeed = 5f;
     [Tooltip("The graph only had this properly wired into one of the two AddForce calls — per your instruction, both now share this single setting.")]
     [SerializeField] private ForceMode forceMode = ForceMode.Acceleration;

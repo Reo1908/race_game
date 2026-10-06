@@ -1094,38 +1094,6 @@ ParticleSystem:
   m_CorrespondingSourceObject: {fileID: 1196363544183928896, guid: 191eac5df2888da45b143e9d87f111ec, type: 3}
   m_PrefabInstance: {fileID: 581983830}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &289318995
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 289318996}
-  m_Layer: 10
-  m_Name: CameraRoot
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &289318996
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 289318995}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1251270916}
-  m_Father: {fileID: 2008266017}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &307628736
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1676,38 +1644,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: d559da6b04249bc40941fbf1c3189b80, type: 3}
   m_PrefabInstance: {fileID: 2096633617}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &465035349
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 465035350}
-  m_Layer: 10
-  m_Name: FollowCameraHandle
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &465035350
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 465035349}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.248}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 789920923}
-  m_Father: {fileID: 1949079527}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &469576516 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 5497deb6e47a52243b270c25b77acc25, type: 3}
@@ -6463,11 +6399,11 @@ Transform:
   m_GameObject: {fileID: 789920922}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 1.54, z: -4.618}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 465035350}
+  m_Father: {fileID: 2008266017}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &789920924
 MonoBehaviour:
@@ -7120,38 +7056,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 3906819964980465851, guid: ed5b43a78bd1a254c951567e93dda9d2, type: 3}
---- !u!1 &965704679
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 965704680}
-  m_Layer: 10
-  m_Name: SplineScan
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &965704680
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 965704679}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1073246575}
-  m_Father: {fileID: 2008266017}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &969503433 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: d559da6b04249bc40941fbf1c3189b80, type: 3}
@@ -7532,96 +7436,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1060461886}
   m_Mesh: {fileID: -1432721895136131664, guid: 58b6def490d1bce4894a2a431ac4df8c, type: 3}
---- !u!1 &1073246574
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1073246575}
-  - component: {fileID: 1073246577}
-  - component: {fileID: 1073246576}
-  m_Layer: 10
-  m_Name: DebugModel
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &1073246575
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1073246574}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0.70710576, y: -0, z: -0, w: 0.70710784}
-  m_LocalPosition: {x: 0, y: 1.51, z: 0.334}
-  m_LocalScale: {x: 0.26626, y: 1, z: 0.18694}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 965704680}
-  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
---- !u!23 &1073246576
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1073246574}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
-  m_SmallMeshCulling: 1
-  m_ForceMeshLod: -1
-  m_MeshLodSelectionBias: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_MaskInteraction: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!33 &1073246577
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1073246574}
-  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!4 &1108924589 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: d559da6b04249bc40941fbf1c3189b80, type: 3}
@@ -7929,38 +7743,6 @@ Transform:
   - {fileID: 841689455}
   m_Father: {fileID: 1024276238}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
---- !u!1 &1251270915
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1251270916}
-  m_Layer: 10
-  m_Name: CameraJoint1
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1251270916
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1251270915}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1949079527}
-  m_Father: {fileID: 289318996}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1290038904
 GameObject:
   m_ObjectHideFlags: 0
@@ -9975,38 +9757,6 @@ Transform:
   - {fileID: 189847747}
   m_Father: {fileID: 558461721}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -2}
---- !u!1 &1949079526
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1949079527}
-  m_Layer: 10
-  m_Name: CameraJoint2
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1949079527
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1949079526}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.54, z: -4.37}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 465035350}
-  m_Father: {fileID: 1251270916}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1992583171
 GameObject:
   m_ObjectHideFlags: 0
@@ -10361,12 +10111,11 @@ Transform:
   - {fileID: 2006368842}
   - {fileID: 1450323470}
   - {fileID: 1775322809}
-  - {fileID: 965704680}
-  - {fileID: 289318996}
   - {fileID: 6639577}
   - {fileID: 1649639837}
   - {fileID: 733419217}
   - {fileID: 1322237063}
+  - {fileID: 789920923}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2008266019
@@ -10859,8 +10608,8 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  drivetrainChatterScale: 2
-  drivetrainChatterFrequency: 15
+  drivetrainChatterScale: 0
+  drivetrainChatterFrequency: 0
   enableDownshiftBlip: 1
   downshiftBlipThrottle: 0.388
   showDebugOverlay: 0
@@ -11010,45 +10759,45 @@ MonoBehaviour:
   throttlePosition: 0
   cdiIgnitionMultiplier: 1
   autoDetectSensitivity: 0.05
-  crossfadeSeconds: 0.365
+  crossfadeSeconds: 0.267
   adaptCrossfadeToRpm: 1
   crossfadeSecondsWhenSteady: 1.373
   crossfadeRateMulWhenChangingFast: 0.5
   rpmRateSmoothing: 0.5
-  grainSizeSeconds: 0.177
-  adaptGrainToRpmRate: 0
-  grainSizeWhenSteady: 0.308
-  grainSizeWhenChangingFast: 0.02
-  grainRateMulWhenSteady: 1
-  grainRateMulWhenChangingFast: 1.94
+  grainSizeSeconds: 0.178
+  adaptGrainToRpmRate: 1
+  grainSizeWhenSteady: 0.178
+  grainSizeWhenChangingFast: 0.092
+  grainRateMulWhenSteady: 1.103
+  grainRateMulWhenChangingFast: 2.075
   rpmRateForMaxGrainAdapt: 1.2
-  maxOverlapGrains: 9
+  maxOverlapGrains: 20
   minGrainRate: 60
   maxGrainRate: 260
   fineTunePitchRange: {x: 0.95, y: 1.05}
-  pitchJitter: 0.01
-  pitchWanderStep: 0.01
-  grainPitchDriftMax: 0.2
+  pitchJitter: 0
+  pitchWanderStep: 0
+  grainPitchDriftMax: 0
   rpmRateForMaxDrift: 1.5
   positionJitterFraction: 0.4
-  useCycleAlignedJitter: 1
-  spawnTimingJitter: 0.04
-  grainLengthJitter: 0.0166
-  grainAmplitudeJitter: 0.0169
-  stereoSpread: 0.034
-  panWanderStep: 0.0049
-  panLocalJitter: 0.012
-  masterGain: 1
+  useCycleAlignedJitter: 0
+  spawnTimingJitter: 0
+  grainLengthJitter: 0
+  grainAmplitudeJitter: 0
+  stereoSpread: 0
+  panWanderStep: 0
+  panLocalJitter: 0
+  masterGain: 1.297
   normalizeForOverlap: 0
   softClipOutput: 1
   denoiseLowpassEnabled: 1
-  denoiseLowpassCutoffHz: 3963
-  denoiseGateEnabled: 1
-  denoiseGateThresholdLow: 0.0064
-  denoiseGateThresholdHigh: 0.037
-  denoiseGateFloor: 0.138
-  denoiseGateAttackSeconds: 0.0047
-  denoiseGateReleaseSeconds: 0.037
+  denoiseLowpassCutoffHz: 3436
+  denoiseGateEnabled: 0
+  denoiseGateThresholdLow: 0.0176
+  denoiseGateThresholdHigh: 0
+  denoiseGateFloor: 0.311
+  denoiseGateAttackSeconds: 0.0367
+  denoiseGateReleaseSeconds: 0.213
 --- !u!82 &2008266036
 AudioSource:
   m_ObjectHideFlags: 0
@@ -11163,7 +10912,7 @@ MonoBehaviour:
     type: 0
     isEnabled: 1
     minEngineRPM: 3000
-    minThrottleForSpool: 0.05
+    minThrottleForSpool: 0.118
     spoolUpTime: 1.5
     spoolDownTime: 0.2
     drivePulleyRatio: 0
@@ -11200,20 +10949,20 @@ MonoBehaviour:
       - serializedVersion: 3
         time: 0
         value: 0
-        inSlope: 1
-        outSlope: 1
-        tangentMode: 34
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
         weightedMode: 0
         inWeight: 0
         outWeight: 0
       - serializedVersion: 3
         time: 1
         value: 1
-        inSlope: 1
-        outSlope: 1
-        tangentMode: 34
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
         weightedMode: 0
-        inWeight: 0
+        inWeight: 0.33333334
         outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
@@ -11221,12 +10970,12 @@ MonoBehaviour:
     spinMinPitch: 1
     spinMaxPitch: 2
     spinMinVolume: 0
-    spinMaxVolume: 0.763
+    spinMaxVolume: 0.307
     blowoffClip: {fileID: 8300000, guid: 1d95bea98fdcd474baf788b55631570d, type: 3}
     blowoffAudioSource: {fileID: 1011586207}
     blowoffMinPitch: 0.97
     blowoffMaxPitch: 1.03
-    blowoffVolume: 0.795
+    blowoffVolume: 0.514
     blowoffThrottleDropThreshold: 0.251
     blowoffMinBoostToTrigger: 0.135
     blowoffCooldown: 0.1
@@ -11246,34 +10995,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 613beecd963ce7e49b195cbcb3d81faf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::VehicleHandling
+  driftGripSlider: 0.5
+  driftHandling:
+    manualEditing: 0
+    driftSteeringResponse: 10
+    driftGrip: 5
+    directionalForceMultiplier: 1
+    handbrakeGripLoss: 0.6
+    throttleSteeringAdd: 0.25
+    throttleSteeringMultiplier: 2.5
+    noThrottleRecovery: 0.85
+    stability: 3
+    driftInstability: 2.3
+    driftDirection: 0.2
+    offThrottleFollow: 0.1
+    driftDirectionReactionSpeed: 6
   steerAction: {fileID: 5193483624135996323, guid: 052faaac586de48259a63d0c4782560b, type: 3}
-  additionalGravity: -0.3
+  additionalGravity: 0.3
   dragCoefficient: 0.31
   transitionSpeed: 5
-  stability: 3
   turnRate: 3.4
   gripSteeringResponse: 100
-  driftSteeringResponse: 10
   handbrakeSteeringAdd: 1
   brakeSteeringAdd: 0.2
-  throttleSteeringAdd: 0.1
-  throttleSteeringMultiplier: 0.7
-  noThrottleRecovery: 1.11
   frontLateralSteeringTravel: 7
-  driftInstability: 4
   brakeRearBalance: 0.6
   rearGrip: 1
   grip: 12
-  driftGrip: 5
-  driftDirection: 0.18
-  offThrottleFollow: 0.08
-  driftDirectionReactionSpeed: 6
-  steering: 0
-  currentSpeed: 0
-  currentDriftAngle: 0
-  turning: 0
   showDebugOverlay: 0
   showDebugLines: 0
+  showSliderOnScreen: 1
   debugLineScale: 1
   sidewaysStopCurve:
     serializedVersion: 2
